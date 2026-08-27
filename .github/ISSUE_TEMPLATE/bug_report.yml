@@ -1,0 +1,59 @@
+name: Bug report
+description: Report a reproducible defect in SignalForge
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve SignalForge. Remove credentials and personal portfolio data before submitting.
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: v0.1.0 or commit SHA
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Offline demo
+        - Market data
+        - Financial statements
+        - Scoring and gates
+        - Reports and dashboard
+        - Shadow validation
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Include expected and actual behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized logs
+      description: Never include API keys, tokens, cookies, account IDs, or personal holdings.
+      render: shell
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Safety checks
+      options:
+        - label: I removed credentials and personal or proprietary data.
+          required: true
+        - label: I searched existing issues for duplicates.
+          required: true

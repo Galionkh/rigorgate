@@ -1,0 +1,39 @@
+name: Feature request
+description: Propose an evidence-aware improvement
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Research problem
+      description: What research or reproducibility problem should this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed approach
+      description: Explain the smallest useful implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Data provenance and bias considerations
+      description: Identify sources, licensing, timestamps, missing-value behavior, and possible look-ahead or survivorship bias.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Project boundaries
+      options:
+        - label: This proposal does not require committing secrets or proprietary data.
+          required: true
+        - label: This proposal does not add unattended order execution.
+          required: true

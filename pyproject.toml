@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "galion-signal-forge"
+version = "0.1.0"
+description = "Audit-first open-source U.S. equity research and signal-validation engine"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+authors = [{name = "Khader Ghalioun"}]
+keywords = [
+  "equity-research",
+  "stock-screener",
+  "quantitative-finance",
+  "backtesting",
+  "sec-edgar",
+  "alpaca",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Financial and Insurance Industry",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Office/Business :: Financial :: Investment",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/Galionkh/galion-signal-forge"
+Documentation = "https://github.com/Galionkh/galion-signal-forge/tree/main/docs"
+Issues = "https://github.com/Galionkh/galion-signal-forge/issues"
+
+[project.scripts]
+galion-demo = "galion.demo:main"
+galion-scan = "galion.scanner:main"
+galion-events = "galion.events:main"
+
+[tool.setuptools.packages.find]
+include = ["galion*"]
