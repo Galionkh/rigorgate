@@ -25,8 +25,8 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Compile
-        run: python -m compileall -q galion run_scan.py run_events.py
+        run: python -m compileall -q rigorgate run_scan.py run_events.py
       - name: Run deterministic tests
         run: python -m unittest discover -s tests -v
       - name: Run zero-credential demo
-        run: python -m galion.demo > /tmp/galion-demo.json
+        run: python -m rigorgate.demo > /tmp/rigorgate-demo.json
