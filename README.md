@@ -17,6 +17,8 @@
   <a href="https://codespaces.new/Galionkh/galion-signal-forge?quickstart=1"><strong>Open in Codespaces</strong></a>
   &nbsp;·&nbsp;
   <a href="CONTRIBUTOR_START.md"><strong>Ship your first counterexample</strong></a>
+  &nbsp;·&nbsp;
+  <a href="CHALLENGE.md"><strong>Choose a contribution path</strong></a>
 </p>
 
 GALION SignalForge turns a broad equity universe into a small, inspectable research queue. It combines market regime, technical structure, fundamentals, valuation, data quality, accounting checks, and explicit risk gates. Every output preserves its evidence trail and states what the system could not verify.
@@ -50,9 +52,11 @@ The demo uses fictional symbols and deterministic synthetic data. No API key, ne
 
 ## Contribute without setup
 
+You do not need to code to contribute. Researchers can submit a decision-time counterexample, first-time contributors can take a bounded issue, and experienced developers can harden the data and validation layers. [Choose your path in the open-source challenge](CHALLENGE.md).
+
 [Open the repository in Codespaces](https://codespaces.new/Galionkh/galion-signal-forge?quickstart=1). The container installs the package, runs every verification check, starts Replay Lab, and opens port 8080 automatically.
 
-Your first contribution can be a counterexample: add a fictional setup that looks attractive but must fail a hard gate, then prove that behavior with a test. Follow the five-minute [contributor start guide](CONTRIBUTOR_START.md).
+Your first contribution can stop at a precise research issue or continue into a deterministic fixture and regression test. Follow the five-minute [contributor start guide](CONTRIBUTOR_START.md).
 
 ## Architecture
 

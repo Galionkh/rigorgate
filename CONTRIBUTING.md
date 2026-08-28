@@ -27,6 +27,17 @@ make verify
 
 Run `make lab` to rebuild and serve the interactive decision challenge at `http://localhost:8080`. For a tightly scoped first pull request, follow the [counterexample challenge](CONTRIBUTOR_START.md).
 
+## Research contributions without code
+
+A precise counterexample is a valid contribution even if you do not implement the fixture. Use the [challenge form](https://github.com/Galionkh/galion-signal-forge/issues/new?template=counterexample.yml) and include:
+
+- the decision-time evidence and its timestamp;
+- the gate or posture that appears wrong;
+- the expected fail-closed behavior;
+- the strongest red-team argument against your conclusion.
+
+Do not paste paid-provider payloads or personal holdings. A maintainer or developer can convert a reproducible research case into a deterministic test later. See [CHALLENGE.md](CHALLENGE.md) for all three contribution paths.
+
 ## Pull requests
 
 1. Create a focused branch from `main`.

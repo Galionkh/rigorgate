@@ -1,5 +1,8 @@
 blank_issues_enabled: false
 contact_links:
+  - name: Try the decision challenge first
+    url: https://galionkh.github.io/galion-signal-forge/
+    about: Make a blind decision, reveal the gates, then return with a precise counterexample.
   - name: Security vulnerability
     url: https://github.com/Galionkh/galion-signal-forge/security/advisories/new
     about: Report sensitive security issues privately

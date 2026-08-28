@@ -251,6 +251,11 @@ h1 span, .contribute-intro h2 span { color: transparent; -webkit-text-stroke: 1p
 .gate.pass i { background: var(--green); }.gate.warn i { background: var(--amber); }.gate.fail i { background: var(--red); }
 .gate strong { display: block; font-size: .78rem; }.gate p { margin: 2px 0 0; color: var(--muted); font-size: .72rem; }
 .passport-button { width: 100%; margin-top: 16px; padding: 13px; display: flex; justify-content: space-between; color: var(--text); border: 1px solid rgba(94,231,255,.3); background: rgba(94,231,255,.07); border-radius: 9px; cursor: pointer; }
+.challenge-action { margin-top: 12px; padding: 15px; border: 1px solid rgba(243,201,105,.24); border-radius: 9px; background: rgba(243,201,105,.05); }
+.challenge-action > span { color: var(--amber); font-size: .62rem; font-weight: 800; letter-spacing: .12em; }
+.challenge-action p { margin: 5px 0 12px; color: var(--muted); font-size: .76rem; }
+.challenge-action a { display: flex; justify-content: space-between; color: var(--text); font-size: .78rem; font-weight: 750; }
+.challenge-action a:hover { color: var(--cyan); }
 
 .evidence-section { border-top: 1px solid var(--line); }
 .passport-preview { display: grid; grid-template-columns: 1.2fr .8fr; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: rgba(8, 22, 34, .8); }
@@ -270,10 +275,12 @@ h1 span, .contribute-intro h2 span { color: transparent; -webkit-text-stroke: 1p
 .command-card { margin-top: 36px; padding: 22px; display: grid; gap: 10px; border: 1px solid var(--line); background: rgba(4,15,24,.7); border-radius: 14px; }
 .command-card span { color: var(--cyan); font-size: .65rem; letter-spacing: .13em; }
 .command-card code { color: #b6d9df; }.command-card b { color: var(--green); }
+.text-link { display: inline-block; margin-top: 20px; color: var(--cyan); font-size: .82rem; font-weight: 750; }
 .quest-board { display: grid; gap: 14px; align-content: center; }
 .quest { padding: 25px; display: grid; grid-template-columns: 64px 1fr auto; gap: 20px; align-items: center; border: 1px solid var(--line); border-radius: 15px; background: rgba(10,28,42,.68); transition: transform .2s, border-color .2s; }
 .quest:hover { transform: translateX(5px); border-color: rgba(94,231,255,.38); }
 .quest-index { width: 54px; height: 54px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--cyan); font: 700 .75rem ui-monospace, monospace; }
+.quest-track { display: block; margin-bottom: 6px; color: var(--cyan); font: 800 .6rem ui-monospace, monospace; letter-spacing: .12em; }
 .quest h3 { margin: 0 0 4px; }.quest p { margin: 0; color: var(--muted); font-size: .82rem; }
 .quest-meta { color: var(--amber); font-size: .68rem; text-align: right; }
 .quest-meta span { display: block; color: var(--muted); margin-top: 4px; }

@@ -2,6 +2,8 @@
 
 The fastest way to understand SignalForge is to try to break a decision gate.
 
+No code is required for the researcher path. See [Can you break SignalForge?](CHALLENGE.md) to choose between a research case, a first pull request, and a core engineering task.
+
 ## Zero-install path
 
 1. Open the repository in [GitHub Codespaces](https://codespaces.new/Galionkh/galion-signal-forge?quickstart=1).
@@ -33,6 +35,8 @@ Want a concrete task instead of starting from a blank issue? Pick one of these o
 - **Red-team a sector — research challenge:** [Add a sector-specific accounting trap](https://github.com/Galionkh/galion-signal-forge/issues/9)
 
 If one is already claimed, browse all [open issues](https://github.com/Galionkh/galion-signal-forge/issues) and leave a short comment before you start.
+
+Not ready to code? [Submit a no-code counterexample](https://github.com/Galionkh/galion-signal-forge/issues/new?template=counterexample.yml) with the evidence that was observable at decision time. A maintainer or developer can convert a strong case into a fixture later.
 
 ## The counterexample challenge
 

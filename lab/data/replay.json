@@ -403,25 +403,28 @@
   ],
   "contributor_quests": [
     {
-      "description": "Add a failure fixture that exposes a false positive and prove the engine fails closed.",
-      "difficulty": "30\u201360 min",
-      "href": "https://github.com/Galionkh/galion-signal-forge/issues/new?template=counterexample.yml&title=Counterexample%3A+break+a+gate",
+      "description": "Describe a case that could fool a gate. No code is required; precise decision-time evidence is the contribution.",
+      "difficulty": "5\u201315 min",
+      "href": "https://github.com/Galionkh/galion-signal-forge/issues/new?template=counterexample.yml&title=%5BChallenge%5D%3A+find+a+false+positive",
+      "label": "no code",
+      "title": "Submit a counterexample",
+      "track": "RESEARCHER"
+    },
+    {
+      "description": "Pick a scoped issue with named files, acceptance checks, and a deterministic verification command.",
+      "difficulty": "30\u201390 min",
+      "href": "https://github.com/Galionkh/galion-signal-forge/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22",
       "label": "good first issue",
-      "title": "Break a gate"
+      "title": "Ship a bounded fix",
+      "track": "FIRST PR"
     },
     {
-      "description": "Implement a provider contract with provenance, freshness, quota, and missing-data tests.",
-      "difficulty": "2\u20134 hours",
-      "href": "https://github.com/Galionkh/galion-signal-forge/issues/new?template=feature_request.yml&title=Provider+Forge%3A+adapter+contract",
+      "description": "Work on point-in-time schemas, provider contracts, validation, exports, or evidence diffs.",
+      "difficulty": "2\u20136 hours",
+      "href": "https://github.com/Galionkh/galion-signal-forge/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22",
       "label": "help wanted",
-      "title": "Forge a provider"
-    },
-    {
-      "description": "Add a sector-specific trap that a generic valuation multiple would miss.",
-      "difficulty": "Research challenge",
-      "href": "https://github.com/Galionkh/galion-signal-forge/issues/new?template=counterexample.yml&title=Counterexample%3A+sector-specific+trap",
-      "label": "research",
-      "title": "Red-team a sector"
+      "title": "Harden the evidence layer",
+      "track": "CORE ENGINEERING"
     }
   ],
   "decision_status": "NOT A BUY RECOMMENDATION",

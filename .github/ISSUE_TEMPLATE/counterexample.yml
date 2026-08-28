@@ -1,26 +1,47 @@
-name: Counterexample challenge
-description: Submit a fictional case that should make SignalForge fail closed.
-title: "Counterexample: "
-labels: ["enhancement"]
+name: Challenge a SignalForge decision
+description: Submit a no-code or code-backed case that could expose a false positive or false rejection.
+title: "[Challenge]: "
+labels: ["enhancement", "help wanted"]
 body:
   - type: markdown
     attributes:
       value: |
-        A strong counterexample is more valuable than a flattering demo. Use fictional or legally redistributable data and never include credentials or personal portfolio details.
+        A strong counterexample is more valuable than a flattering demo. You do not need to write code: a precise research case is a valid contribution and can be turned into a fixture later.
+
+        Use fictional or legally redistributable data. Never include credentials, paid-provider payloads, or personal portfolio details.
+  - type: dropdown
+    id: contribution_path
+    attributes:
+      label: Contribution path
+      description: Choose the smallest path you can complete. Maintainers can help move a strong case to the next path.
+      options:
+        - Research case only — no code
+        - Reproducible fixture or test
+        - Gate or validation implementation
+    validations:
+      required: true
+  - type: input
+    id: replay_case
+    attributes:
+      label: Replay case or scenario
+      description: Use DEMOA, DEMOB, DEMOC, or a short name for a new fictional scenario.
+      placeholder: "DEMOC — seductive reversal trap"
+    validations:
+      required: true
   - type: textarea
     id: temptation
     attributes:
-      label: What makes this case look attractive?
-      description: Describe the signal or narrative that could create a false positive.
-      placeholder: The breakout looks strong because...
+      label: What makes this decision challenging?
+      description: Describe the signal or narrative that could create a false positive, false rejection, or unjustified wait.
+      placeholder: The engine may be over- or under-weighting...
     validations:
       required: true
   - type: textarea
     id: failed_gate
     attributes:
-      label: Which gate should stop it?
-      description: Name the failed gate, observable evidence, and expected fail-closed behavior.
-      placeholder: The primary-source gate should fail because...
+      label: Which gate or posture appears wrong?
+      description: Name the gate, observable evidence, current behavior, and expected fail-closed behavior.
+      placeholder: The primary-source gate should pass, warn, or fail because...
     validations:
       required: true
   - type: textarea
@@ -33,8 +54,14 @@ body:
   - type: textarea
     id: fixture
     attributes:
-      label: Proposed fixture or test
-      description: Explain how the behavior can be reproduced without secrets or proprietary data.
+      label: Proposed fixture or test (optional)
+      description: If you want to contribute code, explain how the behavior can be reproduced without secrets or proprietary data. No-code submissions can leave this blank.
+  - type: textarea
+    id: observable_evidence
+    attributes:
+      label: Evidence available at decision time
+      description: List only evidence observable at the decision timestamp. Include public source links when relevant.
+      placeholder: Filing date, price observation date, source, and what remained unknown...
     validations:
       required: true
   - type: checkboxes

@@ -38,9 +38,29 @@ class ReplayLabTests(unittest.TestCase):
 
     def test_every_contributor_quest_has_a_direct_start_url(self) -> None:
         report = build_replay_lab_data()
+        self.assertEqual(
+            {quest["track"] for quest in report["contributor_quests"]},
+            {"RESEARCHER", "FIRST PR", "CORE ENGINEERING"},
+        )
         for quest in report["contributor_quests"]:
             self.assertTrue(quest["href"].startswith(report["repository_url"]))
-            self.assertIn("issues/new?template=", quest["href"])
+            self.assertIn("/issues", quest["href"])
+
+    def test_researcher_track_accepts_a_no_code_counterexample(self) -> None:
+        report = build_replay_lab_data()
+        researcher = next(
+            quest for quest in report["contributor_quests"] if quest["track"] == "RESEARCHER"
+        )
+        self.assertEqual(researcher["label"], "no code")
+        self.assertIn("template=counterexample.yml", researcher["href"])
+
+    def test_lab_surfaces_the_active_case_challenge_action(self) -> None:
+        root = Path(__file__).resolve().parents[1]
+        html = (root / "lab" / "index.html").read_text(encoding="utf-8")
+        script = (root / "lab" / "app.js").read_text(encoding="utf-8")
+        self.assertIn('id="challenge-case-link"', html)
+        self.assertIn('challengeUrl.searchParams.set("template", "counterexample.yml")', script)
+        self.assertIn('challengeUrl.searchParams.set("title", challengeTitle)', script)
 
 
 if __name__ == "__main__":

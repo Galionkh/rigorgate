@@ -136,6 +136,11 @@ function renderAudit(candidate, action) {
     gateList.append(row);
   });
   renderPassportPreview(candidate);
+  const challengeTitle = `[Challenge]: ${candidate.symbol} — ${candidate.title}`;
+  const challengeUrl = new URL(`${state.data.repository_url}/issues/new`);
+  challengeUrl.searchParams.set("template", "counterexample.yml");
+  challengeUrl.searchParams.set("title", challengeTitle);
+  byId("challenge-case-link").href = challengeUrl.toString();
 }
 
 function passportPayload(candidate) {
@@ -215,7 +220,11 @@ function renderQuests(quests) {
     link.href = quest.href;
     link.append(makeElement("span", "quest-index", `Q0${index + 1}`));
     const body = document.createElement("div");
-    body.append(makeElement("h3", "", quest.title), makeElement("p", "", quest.description));
+    body.append(
+      makeElement("span", "quest-track", quest.track),
+      makeElement("h3", "", quest.title),
+      makeElement("p", "", quest.description),
+    );
     const meta = makeElement("span", "quest-meta", quest.difficulty);
     meta.append(makeElement("span", "", `${quest.label} ↗`));
     link.append(body, meta);
