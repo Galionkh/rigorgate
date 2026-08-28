@@ -22,6 +22,18 @@ make lab
 
 Open `http://localhost:8080`.
 
+## Pick a live contributor quest
+
+Want a concrete task instead of starting from a blank issue? Pick one of these open quests:
+
+- **Break a gate — 30–60 min:** [Add a tempting replay case that must fail closed](https://github.com/Galionkh/galion-signal-forge/issues/1)
+- **Improve the lab UX — newcomer friendly:** [Add keyboard shortcuts and visible focus states](https://github.com/Galionkh/galion-signal-forge/issues/2)
+- **Test evidence freshness — newcomer friendly:** [Add a stale-evidence edge case](https://github.com/Galionkh/galion-signal-forge/issues/3)
+- **Forge a provider — deeper engineering:** [Add deterministic provider contract fixtures](https://github.com/Galionkh/galion-signal-forge/issues/5)
+- **Red-team a sector — research challenge:** [Add a sector-specific accounting trap](https://github.com/Galionkh/galion-signal-forge/issues/9)
+
+If one is already claimed, browse all [open issues](https://github.com/Galionkh/galion-signal-forge/issues) and leave a short comment before you start.
+
 ## The counterexample challenge
 
 A useful first pull request adds a case where a tempting signal must fail closed:
