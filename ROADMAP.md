@@ -29,7 +29,7 @@ SignalForge develops in public around evidence quality, reproducibility, and val
 
 ## 0.4 — Research experience
 
-- [ ] Accessible interactive dashboard
+- [x] Accessible interactive Replay Lab
 - [ ] Candidate evidence diff between runs
 - [ ] Rejection funnel and provider health views
 - [ ] Sector-specific underwriting templates

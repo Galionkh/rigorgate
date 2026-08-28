@@ -1,0 +1,48 @@
+name: Counterexample challenge
+description: Submit a fictional case that should make SignalForge fail closed.
+title: "Counterexample: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A strong counterexample is more valuable than a flattering demo. Use fictional or legally redistributable data and never include credentials or personal portfolio details.
+  - type: textarea
+    id: temptation
+    attributes:
+      label: What makes this case look attractive?
+      description: Describe the signal or narrative that could create a false positive.
+      placeholder: The breakout looks strong because...
+    validations:
+      required: true
+  - type: textarea
+    id: failed_gate
+    attributes:
+      label: Which gate should stop it?
+      description: Name the failed gate, observable evidence, and expected fail-closed behavior.
+      placeholder: The primary-source gate should fail because...
+    validations:
+      required: true
+  - type: textarea
+    id: red_team
+    attributes:
+      label: Strongest red-team argument
+      description: State the best case against advancing this candidate.
+    validations:
+      required: true
+  - type: textarea
+    id: fixture
+    attributes:
+      label: Proposed fixture or test
+      description: Explain how the behavior can be reproduced without secrets or proprietary data.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety boundary
+      options:
+        - label: This report uses fictional or legally redistributable data.
+          required: true
+        - label: This report does not request order execution or claim guaranteed performance.
+          required: true

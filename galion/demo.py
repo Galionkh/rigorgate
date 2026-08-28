@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 from dataclasses import asdict
 from datetime import date, timedelta
 from pathlib import Path
@@ -22,7 +23,8 @@ def synthetic_bars(
     first = date(2025, 1, 2)
     rows = []
     for index in range(count):
-        close = start + daily_step * index
+        cycle = 1.8 * math.sin(index / 5.5) + 0.55 * math.sin(index / 2.3)
+        close = start + daily_step * index + cycle
         rows.append(
             {
                 "t": (first + timedelta(days=index)).isoformat(),

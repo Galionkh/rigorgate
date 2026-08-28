@@ -11,6 +11,14 @@
 
 <p align="center"><strong>Open-source, audit-first U.S. equity research engine.</strong></p>
 
+<p align="center">
+  <a href="https://galionkh.github.io/galion-signal-forge/"><strong>Launch Replay Lab</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://codespaces.new/Galionkh/galion-signal-forge?quickstart=1"><strong>Open in Codespaces</strong></a>
+  &nbsp;·&nbsp;
+  <a href="CONTRIBUTOR_START.md"><strong>Ship your first counterexample</strong></a>
+</p>
+
 GALION SignalForge turns a broad equity universe into a small, inspectable research queue. It combines market regime, technical structure, fundamentals, valuation, data quality, accounting checks, and explicit risk gates. Every output preserves its evidence trail and states what the system could not verify.
 
 It is designed to help researchers find candidates worth underwriting. It does not place orders, promise returns, or disguise a screening score as a probability of success.
@@ -24,7 +32,13 @@ It is designed to help researchers find candidates worth underwriting. It does n
 - **Modular providers:** prices, filings, macro data, and estimates remain replaceable.
 - **Research posture:** outputs are `WATCHLIST`, `WAIT FOR PROOF`, or `RESEARCH CANDIDATE`—never automatic orders.
 
-## Try it in 60 seconds
+## The 60-second decision challenge
+
+Open the [Replay Lab](https://galionkh.github.io/galion-signal-forge/) before reading the source. You get three fictional market setups and must choose **Research**, **Wait**, or **Reject** while the audit trail is locked. SignalForge then reveals the failed gates, missing evidence, red-team case, and a downloadable Evidence Passport.
+
+It is zero credential, deterministic, and incapable of placing an order. The point is not to admire a score. It is to find a decision you can break.
+
+Prefer the terminal?
 
 ```bash
 git clone https://github.com/Galionkh/galion-signal-forge.git
@@ -33,6 +47,12 @@ python -m galion.demo
 ```
 
 The demo uses fictional symbols and deterministic synthetic data. No API key, network access, or brokerage account is required.
+
+## Contribute without setup
+
+[Open the repository in Codespaces](https://codespaces.new/Galionkh/galion-signal-forge?quickstart=1). The container installs the package, runs every verification check, starts Replay Lab, and opens port 8080 automatically.
+
+Your first contribution can be a counterexample: add a fictional setup that looks attractive but must fail a hard gate, then prove that behavior with a test. Follow the five-minute [contributor start guide](CONTRIBUTOR_START.md).
 
 ## Architecture
 
@@ -106,7 +126,7 @@ Scores rank comparable candidates inside the current run. They are not calibrate
 
 ## Contributing
 
-SignalForge welcomes improvements to provider adapters, point-in-time validation, accounting checks, documentation, and reproducible research. Start with [CONTRIBUTING.md](CONTRIBUTING.md), review the [roadmap](ROADMAP.md), and keep every pull request testable and source-aware.
+SignalForge welcomes improvements to provider adapters, point-in-time validation, accounting checks, documentation, and reproducible research. Start with the [counterexample challenge](CONTRIBUTOR_START.md), read [CONTRIBUTING.md](CONTRIBUTING.md), review the [roadmap](ROADMAP.md), and keep every pull request testable and source-aware.
 
 Good first contributions include:
 

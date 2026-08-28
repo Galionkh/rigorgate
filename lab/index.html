@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SignalForge Replay Lab — challenge an audit-first equity research engine with fictional market cases.">
+  <meta name="theme-color" content="#07111f">
+  <title>SignalForge Replay Lab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="SignalForge Replay Lab home">
+      <span class="brand-mark" aria-hidden="true"><span></span></span>
+      <span><strong>GALION</strong> SignalForge</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#challenge">Replay</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#contribute">Contribute</a>
+      <a class="nav-github" href="https://github.com/Galionkh/galion-signal-forge">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> ZERO-CREDENTIAL REPLAY LAB</div>
+        <h1>Don’t trust the score.<br><span>Interrogate the decision.</span></h1>
+        <p class="hero-lede">Three fictional stocks. Hidden outcomes. You decide whether to research, wait, or reject—then SignalForge opens its gates and shows every weak link.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#challenge">Enter the decision room <span>↓</span></a>
+          <a class="button secondary" href="https://codespaces.new/Galionkh/galion-signal-forge?quickstart=1">Open in Codespaces ↗</a>
+        </div>
+        <div class="hero-proof" aria-label="Replay Lab characteristics">
+          <div><strong>3</strong><span>hidden cases</span></div>
+          <div><strong>0</strong><span>API keys</span></div>
+          <div><strong>100%</strong><span>deterministic</span></div>
+          <div><strong>0</strong><span>orders</span></div>
+        </div>
+      </div>
+
+      <aside class="terminal-card" aria-label="SignalForge discovery funnel preview">
+        <div class="terminal-top">
+          <span class="terminal-lights"><i></i><i></i><i></i></span>
+          <span>replay://decision-funnel</span>
+          <span class="terminal-status">LIVE</span>
+        </div>
+        <div class="terminal-body">
+          <p><span class="prompt">$</span> signalforge replay --blind</p>
+          <div id="hero-funnel" class="hero-funnel" aria-live="polite"></div>
+          <div class="terminal-result">
+            <span>RESEARCH QUEUE</span>
+            <strong>3 CASES LOCKED</strong>
+          </div>
+          <p class="terminal-cursor"><span class="prompt">›</span> Your judgment is the first model<span class="cursor"></span></p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="manifesto" aria-label="SignalForge principle">
+      <p>Most screeners show what passed.</p>
+      <h2>SignalForge is built to expose <em>why something should fail.</em></h2>
+    </section>
+
+    <section id="challenge" class="challenge-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-index">01 / DECISION ROOM</span>
+          <h2>Can you beat the gate?</h2>
+        </div>
+        <p>Inspect the structure without seeing the engine’s conclusion. Make the call, then reveal the audit trail.</p>
+      </div>
+
+      <div class="case-tabs" id="case-tabs" role="tablist" aria-label="Replay cases"></div>
+
+      <div class="decision-grid">
+        <article class="market-panel">
+          <div class="panel-heading">
+            <div>
+              <span class="case-kicker" id="case-archetype">Loading replay…</span>
+              <h3><span id="case-symbol">—</span> <small id="case-title"></small></h3>
+            </div>
+            <span class="synthetic-badge">FICTIONAL DATA</span>
+          </div>
+
+          <div class="chart-wrap">
+            <svg id="price-chart" viewBox="0 0 760 290" role="img" aria-labelledby="chart-title chart-desc">
+              <title id="chart-title">Synthetic price history</title>
+              <desc id="chart-desc">A deterministic fictional price series for the active replay case.</desc>
+              <defs>
+                <linearGradient id="chart-fill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#5ee7ff" stop-opacity=".32"></stop>
+                  <stop offset="1" stop-color="#5ee7ff" stop-opacity="0"></stop>
+                </linearGradient>
+              </defs>
+              <g id="chart-grid"></g>
+              <path id="area-path" fill="url(#chart-fill)"></path>
+              <path id="line-path" fill="none" stroke="#5ee7ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+              <circle id="last-point" r="6" fill="#07111f" stroke="#5ee7ff" stroke-width="4"></circle>
+            </svg>
+          </div>
+
+          <div class="metric-strip">
+            <div><span>Close</span><strong id="metric-close">—</strong></div>
+            <div><span>63D return</span><strong id="metric-return">—</strong></div>
+            <div><span>RSI 14</span><strong id="metric-rsi">—</strong></div>
+            <div><span>Stage</span><strong id="metric-stage">—</strong></div>
+            <div><span>ATR</span><strong id="metric-atr">—</strong></div>
+          </div>
+
+          <div class="decision-prompt">
+            <div>
+              <span>YOUR DECISION</span>
+              <p>Where should this case go next?</p>
+            </div>
+            <div class="decision-buttons" role="group" aria-label="Choose your decision">
+              <button data-action="research">Research</button>
+              <button data-action="wait">Wait</button>
+              <button data-action="reject">Reject</button>
+            </div>
+          </div>
+        </article>
+
+        <aside class="audit-panel" id="audit-panel" aria-live="polite">
+          <div class="audit-locked" id="audit-locked">
+            <span class="lock-icon" aria-hidden="true">◇</span>
+            <h3>Audit trail locked</h3>
+            <p>Commit to a decision before SignalForge reveals its posture, gates, and strongest counterargument.</p>
+            <div class="blind-lines"><i></i><i></i><i></i><i></i></div>
+          </div>
+
+          <div class="audit-reveal" id="audit-reveal" hidden>
+            <div id="verdict-banner" class="verdict-banner">
+              <span id="verdict-match">DECISION RECORDED</span>
+              <strong id="verdict-status">—</strong>
+            </div>
+            <div class="audit-block">
+              <span class="audit-label">THESIS</span>
+              <p id="case-thesis"></p>
+            </div>
+            <div class="audit-block red-team">
+              <span class="audit-label">RED TEAM</span>
+              <p id="case-red-team"></p>
+            </div>
+            <div class="gate-list" id="gate-list"></div>
+            <button class="passport-button" id="passport-button">Open evidence passport <span>↗</span></button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="evidence" class="evidence-section">
+      <div class="section-heading compact">
+        <div>
+          <span class="section-index">02 / EVIDENCE PASSPORT</span>
+          <h2>A decision you can diff.</h2>
+        </div>
+        <p>Every case carries posture, missing evidence, gates, invalidation, and a machine-readable observation ID.</p>
+      </div>
+      <div class="passport-preview">
+        <div class="passport-code">
+          <div class="code-top"><span>evidence-passport.json</span><span>READ ONLY</span></div>
+          <pre id="passport-json">{
+  "status": "waiting_for_your_decision",
+  "score_is_probability": false,
+  "order_created": false
+}</pre>
+        </div>
+        <div class="passport-copy">
+          <span class="large-number">01</span>
+          <h3>Share the evidence.<br>Not the hype.</h3>
+          <p>Download the exact fictional replay record and inspect what the system knew, what it did not know, and why the gate held.</p>
+          <button id="download-passport" class="button secondary" disabled>Download selected passport</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contribute" class="contribute-section">
+      <div class="contribute-intro">
+        <span class="section-index">03 / THE FORGE</span>
+        <h2>Don’t just star it.<br><span>Try to break it.</span></h2>
+        <p>The fastest contribution is a counterexample: a case where the engine should fail closed but does not. Every useful failure makes the research process harder to fool.</p>
+        <div class="command-card">
+          <span>YOUR FIRST 60 SECONDS</span>
+          <code><b>$</b> make lab</code>
+          <code><b>$</b> make test</code>
+          <code><b>$</b> git checkout -b break-a-gate</code>
+        </div>
+      </div>
+      <div class="quest-board" id="quest-board"></div>
+    </section>
+
+    <section class="final-cta">
+      <div>
+        <span class="section-index">OPEN SOURCE / APACHE 2.0</span>
+        <h2>Build the research engine<br>you would trust with bad news.</h2>
+      </div>
+      <div class="final-actions">
+        <a class="button primary" href="https://github.com/Galionkh/galion-signal-forge">Explore the repository ↗</a>
+        <a class="button secondary" href="https://github.com/Galionkh/galion-signal-forge/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22">Pick a first issue ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>GALION SignalForge · Research software, not investment advice.</span>
+    <span>All Replay Lab securities and prices are fictional. No order is created.</span>
+  </footer>
+
+  <dialog id="passport-dialog" aria-labelledby="passport-title">
+    <div class="dialog-top">
+      <div>
+        <span>EVIDENCE PASSPORT</span>
+        <h2 id="passport-title">Replay record</h2>
+      </div>
+      <button id="close-passport" aria-label="Close evidence passport">×</button>
+    </div>
+    <div id="passport-content"></div>
+    <div class="dialog-actions">
+      <button id="dialog-download" class="button primary">Download JSON</button>
+      <button id="dialog-close-secondary" class="button secondary">Close</button>
+    </div>
+  </dialog>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

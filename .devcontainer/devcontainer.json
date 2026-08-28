@@ -1,0 +1,18 @@
+{
+  "name": "GALION SignalForge",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
+  "postCreateCommand": "python -m pip install -e . && make verify",
+  "postStartCommand": "nohup python -m galion.replay_lab --serve --port 8080 >/tmp/signalforge-replay-lab.log 2>&1 &",
+  "forwardPorts": [8080],
+  "portsAttributes": {
+    "8080": {
+      "label": "SignalForge Replay Lab",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"]
+    }
+  }
+}

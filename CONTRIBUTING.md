@@ -12,14 +12,20 @@ Thank you for helping build transparent, evidence-aware equity research software
 
 ## Development setup
 
+The zero-install route is [GitHub Codespaces](https://codespaces.new/Galionkh/galion-signal-forge?quickstart=1). It verifies the repository and opens Replay Lab automatically.
+
+For local development:
+
 ```bash
 git clone https://github.com/Galionkh/galion-signal-forge.git
 cd galion-signal-forge
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e .
-python -m unittest discover -s tests -v
+make verify
 ```
+
+Run `make lab` to rebuild and serve the interactive decision challenge at `http://localhost:8080`. For a tightly scoped first pull request, follow the [counterexample challenge](CONTRIBUTOR_START.md).
 
 ## Pull requests
 

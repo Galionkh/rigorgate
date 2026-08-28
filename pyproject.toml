@@ -37,6 +37,7 @@ Issues = "https://github.com/Galionkh/galion-signal-forge/issues"
 
 [project.scripts]
 galion-demo = "galion.demo:main"
+galion-lab = "galion.replay_lab:main"
 galion-scan = "galion.scanner:main"
 galion-events = "galion.events:main"
 

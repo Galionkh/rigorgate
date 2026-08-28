@@ -6,6 +6,18 @@ The format follows Keep a Changelog, and the project uses Semantic Versioning.
 
 ## [Unreleased]
 
+### Added
+
+- Interactive, zero-credential Replay Lab with blind decisions and revealed audit trails.
+- Downloadable Evidence Passports for every fictional replay case.
+- One-click GitHub Codespaces environment and deterministic `make verify` workflow.
+- GitHub Pages deployment and contributor quest board.
+
+### Changed
+
+- Synthetic demo prices now include deterministic market cycles for richer technical cases.
+- CI now verifies that the checked-in Replay Lab dataset is reproducible.
+
 ## [0.1.0] - 2026-08-27
 
 ### Added
