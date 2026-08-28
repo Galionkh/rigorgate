@@ -1,0 +1,32 @@
+name: Finish verified Replay Lab publication
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/finish-replay-lab.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Apply verified Replay Lab commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git am .github/workflows/replay-lab.patch
+      - name: Verify before publishing
+        run: make verify
+      - name: Remove one-time publishing files and push
+        run: |
+          git rm .github/workflows/finish-replay-lab.yml .github/workflows/replay-lab.patch
+          git rm -f publish-replay-lab.yml replay-lab.patch
+          git commit -m "Remove one-time Replay Lab publisher"
+          git push origin HEAD:main
