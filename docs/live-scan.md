@@ -5,8 +5,8 @@ The public repository is safe to evaluate with the offline demo. A live scan req
 ## Local setup
 
 ```bash
-git clone https://github.com/Galionkh/galion-signal-forge.git
-cd galion-signal-forge
+git clone https://github.com/Galionkh/rigorgate.git
+cd rigorgate
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e .
@@ -18,9 +18,9 @@ Load credentials from `.env` using your preferred shell or secret manager. The p
 ## Verify before going live
 
 ```bash
-python -m compileall -q galion run_scan.py run_events.py
+python -m compileall -q rigorgate run_scan.py run_events.py
 python -m unittest discover -s tests -v
-python -m galion.demo
+python -m rigorgate.demo
 ```
 
 ## Run modes
@@ -46,7 +46,7 @@ The public workflow runs tests only and needs no secrets. If you create a privat
 
 ## How to use an output
 
-A scan result is a research queue. Before acting on a candidate, verify current price and liquidity, read the latest primary filings and company release, inspect earnings quality and guidance, compare valuation with appropriate peers, define invalidation and position risk, and perform a red-team review. SignalForge does not complete these steps on your behalf and does not place trades.
+A scan result is a research queue. Before acting on a candidate, verify current price and liquidity, read the latest primary filings and company release, inspect earnings quality and guidance, compare valuation with appropriate peers, define invalidation and position risk, and perform a red-team review. RigorGate does not complete these steps on your behalf and does not place trades.
 
 ## Troubleshooting
 

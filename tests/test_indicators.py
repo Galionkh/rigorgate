@@ -9,23 +9,23 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest.mock import patch
 
-from galion.cache import JsonFundamentalCache
-from galion.dashboard import render_dashboard
-from galion.forensics import analyze_statements
-from galion.indicators import build_snapshot, combine_regime, market_breadth, market_regime
-from galion.discovery import build_research_queue, diversified_shortlist, event_risk_flags
-from galion.events import materiality_score, normalize_news
-from galion.http import ProviderError
-from galion.providers import (
+from rigorgate.cache import JsonFundamentalCache
+from rigorgate.dashboard import render_dashboard
+from rigorgate.forensics import analyze_statements
+from rigorgate.indicators import build_snapshot, combine_regime, market_breadth, market_regime
+from rigorgate.discovery import build_research_queue, diversified_shortlist, event_risk_flags
+from rigorgate.events import materiality_score, normalize_news
+from rigorgate.http import ProviderError
+from rigorgate.providers import (
     AlpacaProvider,
     AlphaVantageProvider,
     FmpProvider,
     SecProvider,
     completed_market_data_cutoff,
 )
-from galion.remote_zip import RemoteZipJsonArchive
-from galion.sec_xbrl import normalize_companyfacts
-from galion.scanner import (
+from rigorgate.remote_zip import RemoteZipJsonArchive
+from rigorgate.sec_xbrl import normalize_companyfacts
+from rigorgate.scanner import (
     company_bundle_with_fallback,
     concise_provider_error,
     fmp_overview_from_bundle,
@@ -37,8 +37,8 @@ from galion.scanner import (
     sector_etf_for_name,
     long_eligibility,
 )
-from galion.scoring import fundamental_score, revision_score, valuation_score
-from galion.tracking import SignalLedger
+from rigorgate.scoring import fundamental_score, revision_score, valuation_score
+from rigorgate.tracking import SignalLedger
 
 
 def bars(count: int = 260, start: float = 100.0, step: float = 0.25) -> list[dict]:
@@ -81,7 +81,7 @@ class IndicatorTests(unittest.TestCase):
             return {"bars": {"AAA": []}, "next_page_token": None}
 
         provider = AlpacaProvider("key", "secret")
-        with patch("galion.providers.get_json", side_effect=fake_get_json):
+        with patch("rigorgate.providers.get_json", side_effect=fake_get_json):
             result = provider.daily_bars(
                 ["AAA"], start=date(2026, 1, 1), end=date(2026, 1, 2)
             )
@@ -205,7 +205,7 @@ class IndicatorTests(unittest.TestCase):
         self.assertTrue(provider_quota_exhausted(ProviderError("standard API rate limit")))
         self.assertFalse(provider_quota_exhausted(ProviderError("no data for symbol")))
 
-    @patch("galion.providers.get_json")
+    @patch("rigorgate.providers.get_json")
     def test_fmp_bundle_requires_statements_and_material_filings(self, get_json_mock) -> None:
         get_json_mock.side_effect = [
             [{"symbol": "AAPL", "companyName": "Apple Inc.", "cik": "320193"}],
@@ -223,7 +223,7 @@ class IndicatorTests(unittest.TestCase):
         for call in get_json_mock.call_args_list[1:]:
             self.assertEqual(call.kwargs["params"]["limit"], 5)
 
-    @patch("galion.providers.get_json")
+    @patch("rigorgate.providers.get_json")
     def test_fmp_bundle_marks_missing_free_plan_filing_links(self, get_json_mock) -> None:
         get_json_mock.side_effect = [
             [{"symbol": "AAPL", "companyName": "Apple Inc."}],
@@ -235,7 +235,7 @@ class IndicatorTests(unittest.TestCase):
         self.assertEqual(bundle["filing_evidence_status"], "links-unavailable-on-free-plan")
         self.assertEqual(bundle["latest_filings"], [])
 
-    @patch("galion.providers.get_json")
+    @patch("rigorgate.providers.get_json")
     def test_fmp_bundle_fails_closed_without_statements(self, get_json_mock) -> None:
         get_json_mock.side_effect = [
             [{"symbol": "AAPL", "companyName": "Apple Inc."}],
@@ -246,7 +246,7 @@ class IndicatorTests(unittest.TestCase):
         with self.assertRaises(ProviderError):
             FmpProvider("secret-not-logged").company_bundle("AAPL")
 
-    @patch("galion.providers.get_json")
+    @patch("rigorgate.providers.get_json")
     def test_alpha_vantage_bundle_normalizes_five_quarters(self, get_json_mock) -> None:
         dates = ["2026-06-30", "2026-03-31", "2025-12-31", "2025-09-30", "2025-06-30"]
         get_json_mock.side_effect = [

@@ -68,7 +68,7 @@ def build_demo_report() -> dict[str, Any]:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        description="Run GALION SignalForge with deterministic synthetic data"
+        description="Run RigorGate with deterministic synthetic data"
     )
     parser.add_argument("--output", help="Optional JSON output path")
     args = parser.parse_args(argv)

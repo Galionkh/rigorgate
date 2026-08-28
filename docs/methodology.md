@@ -1,6 +1,6 @@
 # Methodology
 
-SignalForge is a discovery and underwriting aid for liquid U.S.-listed common stocks. It ranks evidence, not certainty.
+RigorGate is a discovery and underwriting aid for liquid U.S.-listed common stocks. It ranks evidence, not certainty.
 
 ## Research sequence
 
@@ -30,7 +30,7 @@ The candidate score is an ordinal ranking within a run. It is not a probability 
 
 ## Validation discipline
 
-Outcome tracking must use the original point-in-time snapshot, including price, evidence availability, thresholds, and posture. Later information must not be backfilled into the original decision record. SignalForge withholds aggregate performance claims until at least 50 observations have matured at the relevant horizon. Even then, results should be reported with sample size, time period, assumptions, and known biases.
+Outcome tracking must use the original point-in-time snapshot, including price, evidence availability, thresholds, and posture. Later information must not be backfilled into the original decision record. RigorGate withholds aggregate performance claims until at least 50 observations have matured at the relevant horizon. Even then, results should be reported with sample size, time period, assumptions, and known biases.
 
 ## Known limitations
 

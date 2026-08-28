@@ -1,12 +1,12 @@
 {
-  "name": "GALION SignalForge",
+  "name": "RigorGate",
   "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
   "postCreateCommand": "python -m pip install -e . && make verify",
-  "postStartCommand": "nohup python -m galion.replay_lab --serve --port 8080 >/tmp/signalforge-replay-lab.log 2>&1 &",
+  "postStartCommand": "nohup python -m rigorgate.replay_lab --serve --port 8080 >/tmp/rigorgate-replay-lab.log 2>&1 &",
   "forwardPorts": [8080],
   "portsAttributes": {
     "8080": {
-      "label": "SignalForge Replay Lab",
+      "label": "RigorGate Replay Lab",
       "onAutoForward": "openBrowser"
     }
   },

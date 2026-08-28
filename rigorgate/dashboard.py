@@ -56,7 +56,7 @@ def render_dashboard(report: dict[str, Any]) -> str:
 
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>GALION SignalForge Dashboard</title><style>
+<title>RigorGate Dashboard</title><style>
 :root{{--bg:#08111f;--panel:#111d31;--line:#243653;--text:#edf4ff;--muted:#9eb0ca;--accent:#42d8a8;--warn:#ffcc66}}
 *{{box-sizing:border-box}} body{{margin:0;background:linear-gradient(140deg,#07101c,#0c1830);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}}
 main{{max-width:1440px;margin:auto;padding:28px}} header{{display:flex;justify-content:space-between;gap:20px;align-items:end;flex-wrap:wrap}}
@@ -65,7 +65,7 @@ h1{{margin:0;font-size:clamp(28px,5vw,52px)}} h2{{margin-top:34px}} .sub,small{{
 .metric span{{color:var(--muted)}} .metric strong{{font-size:28px}} .table{{overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:14px}} table{{width:100%;border-collapse:collapse;min-width:980px}} th,td{{padding:13px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}} th{{color:var(--accent)}}
 .notice{{border-left:4px solid var(--warn);padding:14px;background:#2b2416;margin:24px 0;border-radius:8px}} footer{{color:var(--muted);margin:32px 0}}
 </style></head><body><main>
-<header><div><div class="sub">GALION SignalForge · {_escape(report.get('as_of_session'))}</div><h1>U.S. Equity Discovery Dashboard</h1></div><div class="badge">{_escape(report.get('run_status'))}</div></header>
+<header><div><div class="sub">RigorGate · {_escape(report.get('as_of_session'))}</div><h1>U.S. Equity Discovery Dashboard</h1></div><div class="badge">{_escape(report.get('run_status'))}</div></header>
 <div class="notice"><b>Not a buy recommendation.</b> These are screen-grade research priorities. The user owns every investment and execution decision.</div>
 <section class="grid">
 <div class="metric"><span>Market regime</span><strong>{_escape(report.get('market_regime'))}</strong><small>{_escape(breadth.get('posture'))}</small></div>

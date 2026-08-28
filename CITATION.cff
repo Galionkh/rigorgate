@@ -1,14 +1,14 @@
 cff-version: 1.2.0
-message: "If you use GALION SignalForge in research, please cite this software."
-title: "GALION SignalForge"
+message: "If you use RigorGate in research, please cite this software."
+title: "RigorGate"
 type: software
 authors:
   - family-names: "Ghalioun"
     given-names: "Khader"
-repository-code: "https://github.com/Galionkh/galion-signal-forge"
-url: "https://github.com/Galionkh/galion-signal-forge"
-version: 0.1.0
-date-released: 2026-08-27
+repository-code: "https://github.com/Galionkh/rigorgate"
+url: "https://github.com/Galionkh/rigorgate"
+version: 0.2.0
+date-released: 2026-08-28
 license: Apache-2.0
 keywords:
   - equity research

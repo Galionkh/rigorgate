@@ -1,16 +1,16 @@
 name: Bug report
-description: Report a reproducible defect in SignalForge
+description: Report a reproducible defect in RigorGate
 title: "[Bug]: "
 labels: ["bug", "triage"]
 body:
   - type: markdown
     attributes:
-      value: Thanks for helping improve SignalForge. Remove credentials and personal portfolio data before submitting.
+      value: Thanks for helping improve RigorGate. Remove credentials and personal portfolio data before submitting.
   - type: input
     id: version
     attributes:
       label: Version or commit
-      placeholder: v0.1.0 or commit SHA
+      placeholder: v0.2.0 or commit SHA
     validations:
       required: true
   - type: dropdown

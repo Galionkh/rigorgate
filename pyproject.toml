@@ -3,9 +3,9 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "galion-signal-forge"
-version = "0.1.0"
-description = "Audit-first open-source U.S. equity research and signal-validation engine"
+name = "rigorgate"
+version = "0.2.0"
+description = "Audit-first open-source equity research engine built to expose weak decisions"
 readme = "README.md"
 requires-python = ">=3.11"
 license = {file = "LICENSE"}
@@ -31,15 +31,15 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/Galionkh/galion-signal-forge"
-Documentation = "https://github.com/Galionkh/galion-signal-forge/tree/main/docs"
-Issues = "https://github.com/Galionkh/galion-signal-forge/issues"
+Homepage = "https://github.com/Galionkh/rigorgate"
+Documentation = "https://github.com/Galionkh/rigorgate/tree/main/docs"
+Issues = "https://github.com/Galionkh/rigorgate/issues"
 
 [project.scripts]
-galion-demo = "galion.demo:main"
-galion-lab = "galion.replay_lab:main"
-galion-scan = "galion.scanner:main"
-galion-events = "galion.events:main"
+rigorgate-demo = "rigorgate.demo:main"
+rigorgate-lab = "rigorgate.replay_lab:main"
+rigorgate-scan = "rigorgate.scanner:main"
+rigorgate-events = "rigorgate.events:main"
 
 [tool.setuptools.packages.find]
-include = ["galion*"]
+include = ["rigorgate*"]

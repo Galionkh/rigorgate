@@ -1,31 +1,37 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="GALION SignalForge" width="100%">
+  <img src="assets/banner.svg" alt="RigorGate" width="100%">
 </p>
 
 <p align="center">
-  <a href="https://github.com/Galionkh/galion-signal-forge/actions/workflows/ci.yml"><img src="https://github.com/Galionkh/galion-signal-forge/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://github.com/Galionkh/rigorgate/actions/workflows/ci.yml"><img src="https://github.com/Galionkh/rigorgate/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-36d399" alt="Apache-2.0"></a>
   <img src="https://img.shields.io/badge/python-3.11%2B-5ee7ff" alt="Python 3.11+">
   <img src="https://img.shields.io/badge/status-research--grade-f6c85f" alt="Research-grade">
 </p>
 
-<p align="center"><strong>Open-source, audit-first U.S. equity research engine.</strong></p>
+<p align="center"><strong>Audit-first equity research. Built to be challenged.</strong></p>
+
+<p align="center"><em>Don't trust the score. Break the gate.</em></p>
 
 <p align="center">
-  <a href="https://galionkh.github.io/galion-signal-forge/"><strong>Launch Replay Lab</strong></a>
+  <a href="https://galionkh.github.io/rigorgate/"><strong>Try the 60-second Replay Lab</strong></a>
   &nbsp;·&nbsp;
-  <a href="https://codespaces.new/Galionkh/galion-signal-forge?quickstart=1"><strong>Open in Codespaces</strong></a>
+  <a href="https://github.com/Galionkh/rigorgate/issues/new?template=counterexample.yml"><strong>Break a gate</strong></a>
   &nbsp;·&nbsp;
-  <a href="CONTRIBUTOR_START.md"><strong>Ship your first counterexample</strong></a>
-  &nbsp;·&nbsp;
-  <a href="CHALLENGE.md"><strong>Choose a contribution path</strong></a>
+  <a href="CONTRIBUTOR_START.md"><strong>Start contributing</strong></a>
 </p>
 
-GALION SignalForge turns a broad equity universe into a small, inspectable research queue. It combines market regime, technical structure, fundamentals, valuation, data quality, accounting checks, and explicit risk gates. Every output preserves its evidence trail and states what the system could not verify.
+RigorGate turns a broad equity universe into a small, inspectable research queue. It combines market regime, technical structure, fundamentals, valuation, data quality, accounting checks, and explicit hard gates. Every decision preserves its evidence trail, missing inputs, rejection reasons, and strongest counterargument.
 
-It is designed to help researchers find candidates worth underwriting. It does not place orders, promise returns, or disguise a screening score as a probability of success.
+It helps researchers decide what deserves deeper underwriting. It does not place orders, promise returns, or disguise a ranking score as a probability of success.
 
-## Why SignalForge?
+| If you are a… | Start here | What you can do |
+|---|---|---|
+| Curious visitor | [Replay Lab](https://galionkh.github.io/rigorgate/) | Make three blind decisions, then reveal the gates and Evidence Passport |
+| Researcher or investor | [Counterexample challenge](CHALLENGE.md) | Submit a decision-time case without writing code |
+| Python, data, or quant developer | [Contributor start](CONTRIBUTOR_START.md) | Pick a bounded issue, open Codespaces, and ship a tested fix |
+
+## Why RigorGate?
 
 - **Audit first:** every candidate carries source, freshness, coverage, and rejection details.
 - **Fail closed:** missing critical evidence lowers confidence instead of inventing certainty.
@@ -34,27 +40,27 @@ It is designed to help researchers find candidates worth underwriting. It does n
 - **Modular providers:** prices, filings, macro data, and estimates remain replaceable.
 - **Research posture:** outputs are `WATCHLIST`, `WAIT FOR PROOF`, or `RESEARCH CANDIDATE`—never automatic orders.
 
-## The 60-second decision challenge
+## Can you break the gate?
 
-Open the [Replay Lab](https://galionkh.github.io/galion-signal-forge/) before reading the source. You get three fictional market setups and must choose **Research**, **Wait**, or **Reject** while the audit trail is locked. SignalForge then reveals the failed gates, missing evidence, red-team case, and a downloadable Evidence Passport.
+Open the [Replay Lab](https://galionkh.github.io/rigorgate/) before reading the source. You get three fictional market setups and must choose **Research**, **Wait**, or **Reject** while the audit trail is locked. RigorGate then reveals the hard gates, missing evidence, red-team case, and a downloadable Evidence Passport.
 
 It is zero credential, deterministic, and incapable of placing an order. The point is not to admire a score. It is to find a decision you can break.
 
 Prefer the terminal?
 
 ```bash
-git clone https://github.com/Galionkh/galion-signal-forge.git
-cd galion-signal-forge
-python -m galion.demo
+git clone https://github.com/Galionkh/rigorgate.git
+cd rigorgate
+python -m rigorgate.demo
 ```
 
-The demo uses fictional symbols and deterministic synthetic data. No API key, network access, or brokerage account is required.
+The demo uses fictional symbols and deterministic synthetic data. No API key, network access, or brokerage account is required. The public demo has no order-execution path.
 
 ## Contribute without setup
 
 You do not need to code to contribute. Researchers can submit a decision-time counterexample, first-time contributors can take a bounded issue, and experienced developers can harden the data and validation layers. [Choose your path in the open-source challenge](CHALLENGE.md).
 
-[Open the repository in Codespaces](https://codespaces.new/Galionkh/galion-signal-forge?quickstart=1). The container installs the package, runs every verification check, starts Replay Lab, and opens port 8080 automatically.
+[Open the repository in Codespaces](https://codespaces.new/Galionkh/rigorgate?quickstart=1). The container installs the package, runs every verification check, starts Replay Lab, and opens port 8080 automatically.
 
 Your first contribution can stop at a precise research issue or continue into a deterministic fixture and regression test. Follow the five-minute [contributor start guide](CONTRIBUTOR_START.md).
 
@@ -105,13 +111,13 @@ Read the complete [Live Scan Guide](docs/live-scan.md) before treating output as
 
 ```bash
 python -m pip install -e .
-galion-demo
+rigorgate-demo
 ```
 
 ## Test
 
 ```bash
-python -m compileall -q galion run_scan.py run_events.py
+python -m compileall -q rigorgate run_scan.py run_events.py
 python -m unittest discover -s tests -v
 ```
 
@@ -126,11 +132,11 @@ CI runs the compile check, unit tests, and offline demo on Python 3.11 and 3.12.
 | `RESEARCH CANDIDATE` | Strong enough for full human underwriting, not an order |
 | `REJECTED` | A hard gate failed and the reasons are recorded |
 
-Scores rank comparable candidates inside the current run. They are not calibrated win probabilities. Performance claims require enough matured, point-in-time observations; SignalForge defaults to withholding them until the validation sample is credible.
+Scores rank comparable candidates inside the current run. They are not calibrated win probabilities. Performance claims require enough matured, point-in-time observations; RigorGate defaults to withholding them until the validation sample is credible.
 
 ## Contributing
 
-SignalForge welcomes improvements to provider adapters, point-in-time validation, accounting checks, documentation, and reproducible research. Start with the [counterexample challenge](CONTRIBUTOR_START.md), read [CONTRIBUTING.md](CONTRIBUTING.md), review the [roadmap](ROADMAP.md), and keep every pull request testable and source-aware.
+RigorGate welcomes improvements to provider adapters, point-in-time validation, accounting checks, documentation, and reproducible research. Start with the [counterexample challenge](CONTRIBUTOR_START.md), read [CONTRIBUTING.md](CONTRIBUTING.md), review the [roadmap](ROADMAP.md), and keep every pull request testable and source-aware.
 
 Good first contributions include:
 
@@ -142,6 +148,6 @@ Good first contributions include:
 
 ## Safety and legal
 
-SignalForge is research software, not investment advice, a broker, or a fiduciary service. Markets involve risk, including loss of principal. Review [DISCLAIMER.md](DISCLAIMER.md) and [SECURITY.md](SECURITY.md). Never expose brokerage credentials or grant a research workflow permission to place orders.
+RigorGate is research software, not investment advice, a broker, or a fiduciary service. Markets involve risk, including loss of principal. Review [DISCLAIMER.md](DISCLAIMER.md) and [SECURITY.md](SECURITY.md). Never expose brokerage credentials or grant a research workflow permission to place orders.
 
 Licensed under [Apache License 2.0](LICENSE). If this project supports your research, star it, test it, and help make the evidence trail harder to fool.

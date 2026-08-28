@@ -1,6 +1,6 @@
 # Disclaimer
 
-GALION SignalForge is open-source software for education, screening, and financial research. It is not investment advice, a recommendation, an offer, a solicitation, a broker-dealer service, or a fiduciary relationship.
+RigorGate is open-source software for education, screening, and financial research. It is not investment advice, a recommendation, an offer, a solicitation, a broker-dealer service, or a fiduciary relationship.
 
 Outputs can be delayed, incomplete, inaccurate, or affected by provider limitations, software defects, market regime changes, and research bias. Scores are rankings, not probabilities or guarantees. Historical and shadow results do not predict future performance.
 

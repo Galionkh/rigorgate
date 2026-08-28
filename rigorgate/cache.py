@@ -19,8 +19,8 @@ class JsonFundamentalCache:
     @classmethod
     def from_environment(cls) -> "JsonFundamentalCache":
         return cls(
-            Path(os.getenv("GALION_CACHE_DIR", "data/cache/fundamentals")),
-            ttl_days=int(os.getenv("GALION_CACHE_TTL_DAYS", "14")),
+            Path(os.getenv("RIGORGATE_CACHE_DIR", "data/cache/fundamentals")),
+            ttl_days=int(os.getenv("RIGORGATE_CACHE_TTL_DAYS", "14")),
         )
 
     def _path(self, symbol: str) -> Path:

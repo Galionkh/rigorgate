@@ -1,6 +1,6 @@
 # Data Sources
 
-SignalForge keeps providers modular because no free source is complete, equally timely, and suitable for every research layer.
+RigorGate keeps providers modular because no free source is complete, equally timely, and suitable for every research layer.
 
 | Source | Role | Credential | Important limitation |
 |---|---|---|---|
@@ -24,7 +24,7 @@ SignalForge keeps providers modular because no free source is complete, equally 
 SEC requests must identify the application and include a monitored contact address. Set a descriptive value such as:
 
 ```bash
-export SEC_USER_AGENT="SignalForge Research your-email@example.com"
+export SEC_USER_AGENT="RigorGate Research your-email@example.com"
 ```
 
 Do not copy the placeholder unchanged. Review the SEC fair-access guidance before running large jobs.

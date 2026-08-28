@@ -396,10 +396,10 @@ def build_report(smoke: bool = False) -> dict[str, Any]:
     alpaca = AlpacaProvider(
         credentials.alpaca_key_id,
         credentials.alpaca_secret_key,
-        historical_feed=os.getenv("GALION_ALPACA_HISTORICAL_FEED", "sip"),
-        realtime_feed=os.getenv("GALION_ALPACA_REALTIME_FEED", "iex"),
+        historical_feed=os.getenv("RIGORGATE_ALPACA_HISTORICAL_FEED", "sip"),
+        realtime_feed=os.getenv("RIGORGATE_ALPACA_REALTIME_FEED", "iex"),
         historical_fallback_feed=os.getenv(
-            "GALION_ALPACA_HISTORICAL_FALLBACK_FEED", "iex"
+            "RIGORGATE_ALPACA_HISTORICAL_FALLBACK_FEED", "iex"
         ),
     )
     alpha = (
@@ -678,7 +678,7 @@ def build_report(smoke: bool = False) -> dict[str, Any]:
                 if snapshot.stage == 4
                 else "FORENSIC REVIEW — ACCOUNTING FLAGS"
                 if forensic.get("flags")
-                else "SCREEN-GRADE — REQUIRES GALION DEEP UNDERWRITING"
+                else "SCREEN-GRADE — REQUIRES RIGORGATE DEEP UNDERWRITING"
             ),
             "qualification_blockers": [
                 "latest filing content not yet reviewed",
@@ -698,9 +698,9 @@ def build_report(smoke: bool = False) -> dict[str, Any]:
     candidates.sort(key=lambda item: item["composite_screen_score"], reverse=True)
     macro = fred.macro_snapshot() if fred else {"status": "FRED_API_KEY not configured"}
     ledger = SignalLedger(
-        Path(os.getenv("GALION_SIGNAL_LEDGER", "data/signal_ledger.json")),
+        Path(os.getenv("RIGORGATE_SIGNAL_LEDGER", "data/signal_ledger.json")),
         round_trip_cost_bps=float(
-            os.getenv("GALION_SHADOW_ROUND_TRIP_COST_BPS", "10")
+            os.getenv("RIGORGATE_SHADOW_ROUND_TRIP_COST_BPS", "10")
         ),
     )
     signal_performance = ledger.update(
@@ -744,7 +744,7 @@ def build_report(smoke: bool = False) -> dict[str, Any]:
         "cache": {
             "hits": cache_hits,
             "misses": cache_misses,
-            "ttl_days": int(os.getenv("GALION_CACHE_TTL_DAYS", "14")),
+            "ttl_days": int(os.getenv("RIGORGATE_CACHE_TTL_DAYS", "14")),
             "credentials_stored": False,
         },
         "source_stack": {
@@ -789,7 +789,7 @@ def failure_report(exc: Exception) -> dict[str, Any]:
 
 def render_markdown(report: dict[str, Any]) -> str:
     lines = [
-        "# GALION SignalForge — Latest Discovery Run",
+        "# RigorGate — Latest Discovery Run",
         "",
         f"- **Run status:** `{report['run_status']}`",
         f"- **Decision status:** `{report['decision_status']}`",
@@ -805,7 +805,7 @@ def render_markdown(report: dict[str, Any]) -> str:
     lines += [
         "## Screen-grade shortlist",
         "",
-        "These names are **research priorities, not buy recommendations**. GALION must review filings, IR, catalysts, valuation scenarios, hard vetoes and the bear case before any final status.",
+        "These names are **research priorities, not buy recommendations**. RigorGate must review filings, IR, catalysts, valuation scenarios, hard vetoes and the bear case before any final status.",
         "",
         f"Universe: {report['universe']['eligible_common_stock_candidates']} eligible listings; "
         f"{report['universe']['passed_price_liquidity_history']} passed price/liquidity/history; "
@@ -846,7 +846,7 @@ def write_report(report: dict[str, Any], output_dir: Path) -> None:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Run the GALION free-data discovery scan")
+    parser = argparse.ArgumentParser(description="Run the RigorGate free-data discovery scan")
     parser.add_argument("--output-dir", default="reports")
     parser.add_argument("--smoke", action="store_true", help="Use a small universe for initial validation")
     args = parser.parse_args(argv)

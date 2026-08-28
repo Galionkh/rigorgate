@@ -1,4 +1,4 @@
-from galion.events import main
+from rigorgate.events import main
 
 
 if __name__ == "__main__":

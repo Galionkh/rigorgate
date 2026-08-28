@@ -56,7 +56,7 @@ class HttpRangeReader:
                 "Accept": "application/zip, application/octet-stream",
                 "Accept-Encoding": "identity",
                 "Range": f"bytes={start}-{end}",
-                "User-Agent": "GALION-Alpha-Scanner/0.5",
+                "User-Agent": "RigorGate-Alpha-Scanner/0.2",
                 **self.headers,
             },
         )

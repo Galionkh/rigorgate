@@ -1,4 +1,4 @@
-# Contributing to GALION SignalForge
+# Contributing to RigorGate
 
 Thank you for helping build transparent, evidence-aware equity research software.
 
@@ -12,13 +12,13 @@ Thank you for helping build transparent, evidence-aware equity research software
 
 ## Development setup
 
-The zero-install route is [GitHub Codespaces](https://codespaces.new/Galionkh/galion-signal-forge?quickstart=1). It verifies the repository and opens Replay Lab automatically.
+The zero-install route is [GitHub Codespaces](https://codespaces.new/Galionkh/rigorgate?quickstart=1). It verifies the repository and opens Replay Lab automatically.
 
 For local development:
 
 ```bash
-git clone https://github.com/Galionkh/galion-signal-forge.git
-cd galion-signal-forge
+git clone https://github.com/Galionkh/rigorgate.git
+cd rigorgate
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e .
@@ -29,7 +29,7 @@ Run `make lab` to rebuild and serve the interactive decision challenge at `http:
 
 ## Research contributions without code
 
-A precise counterexample is a valid contribution even if you do not implement the fixture. Use the [challenge form](https://github.com/Galionkh/galion-signal-forge/issues/new?template=counterexample.yml) and include:
+A precise counterexample is a valid contribution even if you do not implement the fixture. Use the [challenge form](https://github.com/Galionkh/rigorgate/issues/new?template=counterexample.yml) and include:
 
 - the decision-time evidence and its timestamp;
 - the gate or posture that appears wrong;

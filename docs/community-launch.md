@@ -1,12 +1,12 @@
 # Community launch package
 
-This package turns the public release into a contributor challenge. The product identity remains **an audit-first equity research engine**. **Can you break SignalForge?** is the campaign hook.
+This package turns the public release into a contributor challenge. The product identity remains **an audit-first equity research engine**. **Can you break RigorGate?** is the campaign hook.
 
 ## One destination
 
 Send every launch audience to Replay Lab first:
 
-`https://galionkh.github.io/galion-signal-forge/`
+`https://galionkh.github.io/rigorgate/`
 
 The intended path is:
 
@@ -16,9 +16,9 @@ Do not optimize the launch around stars alone. Track Replay Lab visits, complete
 
 ## Core launch copy
 
-> Can you break SignalForge?
+> Can you break RigorGate?
 >
-> SignalForge is an open-source, audit-first equity research engine. We are not asking you to trust another stock score. We are asking you to find the fictional case, evidence pattern, or engineering edge case that breaks a decision gate.
+> RigorGate is an open-source, audit-first equity research engine. We are not asking you to trust another stock score. We are asking you to find the fictional case, evidence pattern, or engineering edge case that breaks a decision gate.
 >
 > Try three blind decisions in Replay Lab. Then submit a no-code counterexample, take a bounded first issue, or harden the point-in-time data and validation layers.
 
@@ -26,11 +26,11 @@ Do not optimize the launch around stars alone. Track Replay Lab visits, complete
 
 ### Title
 
-`SignalForge v0.1.1 — Can you break the gate?`
+`RigorGate v0.2.0 — Don't trust the score. Break the gate.`
 
 ### Body
 
-SignalForge now has a public contributor challenge built around failure discovery, not performance marketing.
+RigorGate now has a public contributor challenge built around failure discovery, not performance marketing.
 
 What is ready:
 
@@ -49,23 +49,23 @@ This is research software, not investment advice. All Replay Lab securities and 
 
 ### Title
 
-`Show HN: SignalForge – an audit-first equity research engine you are invited to break`
+`Show HN: RigorGate – an audit-first equity research engine you are invited to break`
 
 ### Text
 
-I built SignalForge to explore a different question from most stock screeners: can a research engine make its missing evidence and rejection logic as inspectable as its scores?
+I built RigorGate to explore a different question from most stock screeners: can a research engine make its missing evidence and rejection logic as inspectable as its scores?
 
 The public demo is deterministic, uses fictional securities, needs no API keys, and cannot place orders. Replay Lab gives you three cases while hiding the engine posture. After you choose Research, Wait, or Reject, it reveals the gates, missing evidence, red-team case, and a machine-readable Evidence Passport.
 
 I would value counterexamples more than compliments. Non-coders can submit a research case; new contributors can take a bounded first issue; experienced contributors can work on point-in-time schemas, provider contracts, and walk-forward validation.
 
-Replay Lab: https://galionkh.github.io/galion-signal-forge/
+Replay Lab: https://galionkh.github.io/rigorgate/
 
-Repository: https://github.com/Galionkh/galion-signal-forge
+Repository: https://github.com/Galionkh/rigorgate
 
 ## Short social post
 
-Can you break SignalForge?
+Can you break RigorGate?
 
 I built an open-source equity research engine that exposes its failed gates, missing evidence, and strongest counterargument.
 
@@ -77,9 +77,9 @@ Try the blind Replay Lab, then submit a no-code counterexample or take a first i
 
 ## Professional network post
 
-Most stock research tools are designed to show what passed. SignalForge is designed to preserve why a candidate failed, what evidence was missing, and what the strongest argument against the decision was.
+Most stock research tools are designed to show what passed. RigorGate is designed to preserve why a candidate failed, what evidence was missing, and what the strongest argument against the decision was.
 
-The project is now open for a different kind of contribution challenge: **Can you break SignalForge?**
+The project is now open for a different kind of contribution challenge: **Can you break RigorGate?**
 
 Researchers can submit a counterexample without writing code. First-time open-source contributors can take a bounded issue. Data and quant developers can work on point-in-time schemas, provider contracts, evidence diffs, and validation.
 

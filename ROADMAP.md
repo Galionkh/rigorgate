@@ -1,6 +1,6 @@
 # Roadmap
 
-SignalForge develops in public around evidence quality, reproducibility, and validation—not promises of guaranteed returns.
+RigorGate develops in public around evidence quality, reproducibility, and validation—not promises of guaranteed returns.
 
 ## 0.1 — Public foundation
 

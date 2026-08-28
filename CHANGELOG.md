@@ -1,10 +1,10 @@
 # Changelog
 
-All notable changes to GALION SignalForge will be documented in this file.
+All notable changes to RigorGate will be documented in this file.
 
 The format follows Keep a Changelog, and the project uses Semantic Versioning.
 
-## [Unreleased]
+## [0.2.0] - 2026-08-28
 
 ### Added
 
@@ -18,6 +18,8 @@ The format follows Keep a Changelog, and the project uses Semantic Versioning.
 
 ### Changed
 
+- Renamed the project, Python package, commands, website, and contributor campaign to RigorGate.
+- Simplified the GitHub landing page around three paths: try, challenge, and contribute.
 - Synthetic demo prices now include deterministic market cycles for richer technical cases.
 - CI now verifies that the checked-in Replay Lab dataset is reproducible.
 - Contributor onboarding now treats precise research cases as valid contributions even without code.

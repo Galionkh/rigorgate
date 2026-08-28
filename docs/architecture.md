@@ -1,6 +1,6 @@
 # Architecture
 
-GALION SignalForge is a staged research pipeline. Each stage may reject a security, enrich its evidence record, or pass it to a more expensive stage. The design favors traceability over opaque model complexity.
+RigorGate is a staged research pipeline. Each stage may reject a security, enrich its evidence record, or pass it to a more expensive stage. The design favors traceability over opaque model complexity.
 
 ## Core flow
 
@@ -26,7 +26,7 @@ GALION SignalForge is a staged research pipeline. Each stage may reject a securi
 
 | Path | Purpose |
 |---|---|
-| `galion/` | Research engine, provider adapters, scoring, reports, and validation |
+| `rigorgate/` | Research engine, provider adapters, scoring, reports, and validation |
 | `tests/` | Unit and invariant tests |
 | `docs/` | Architecture, methodology, provider, and operations documentation |
 | `run_scan.py` | Live discovery entry point |

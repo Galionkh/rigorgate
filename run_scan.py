@@ -1,4 +1,4 @@
-from galion.scanner import main
+from rigorgate.scanner import main
 
 
 if __name__ == "__main__":

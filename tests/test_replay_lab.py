@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from galion.replay_lab import build_lab, build_replay_lab_data
+from rigorgate.replay_lab import build_lab, build_replay_lab_data
 
 
 class ReplayLabTests(unittest.TestCase):
@@ -33,7 +33,7 @@ class ReplayLabTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             target = build_lab(Path(tmp))
             parsed = json.loads(target.read_text(encoding="utf-8"))
-            self.assertEqual(parsed["schema"], "signalforge-replay-lab/v1")
+            self.assertEqual(parsed["schema"], "rigorgate-replay-lab/v1")
             self.assertEqual(len(parsed["cases"]), 3)
 
     def test_every_contributor_quest_has_a_direct_start_url(self) -> None:

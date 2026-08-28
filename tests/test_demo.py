@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from galion.demo import build_demo_report
+from rigorgate.demo import build_demo_report
 
 
 class DemoTests(unittest.TestCase):

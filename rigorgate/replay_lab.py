@@ -12,8 +12,8 @@ from .demo import build_demo_report, synthetic_bars
 from .indicators import build_snapshot
 
 
-LAB_SCHEMA = "signalforge-replay-lab/v1"
-REPOSITORY_URL = "https://github.com/Galionkh/galion-signal-forge"
+LAB_SCHEMA = "rigorgate-replay-lab/v1"
+REPOSITORY_URL = "https://github.com/Galionkh/rigorgate"
 
 
 def _candidate(
@@ -131,7 +131,7 @@ def build_replay_lab_data() -> dict[str, Any]:
     ]
     return {
         "schema": LAB_SCHEMA,
-        "build_id": "deterministic-replay-v1",
+        "build_id": "rigorgate-replay-v1",
         "run_status": demo["run_status"],
         "source_posture": "synthetic-demo-only",
         "decision_status": "NOT A BUY RECOMMENDATION",
@@ -189,7 +189,7 @@ def build_lab(output_dir: Path) -> Path:
 def serve_lab(directory: Path, port: int) -> None:
     handler = partial(SimpleHTTPRequestHandler, directory=str(directory))
     server = ThreadingHTTPServer(("0.0.0.0", port), handler)
-    print(f"SignalForge Replay Lab: http://localhost:{port}")
+    print(f"RigorGate Replay Lab: http://localhost:{port}")
     print("Press Ctrl+C to stop.")
     try:
         server.serve_forever()
@@ -200,7 +200,7 @@ def serve_lab(directory: Path, port: int) -> None:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Build or serve SignalForge Replay Lab")
+    parser = argparse.ArgumentParser(description="Build or serve RigorGate Replay Lab")
     parser.add_argument("--directory", default="lab", help="Static lab directory")
     parser.add_argument("--port", type=int, default=8080)
     parser.add_argument("--build-only", action="store_true")

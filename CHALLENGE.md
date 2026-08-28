@@ -1,6 +1,6 @@
-# Can you break SignalForge?
+# Can you break RigorGate?
 
-SignalForge is an audit-first equity research engine. The challenge is not to trust its score. The challenge is to find the fictional case, public evidence pattern, or engineering edge case that makes a decision gate behave incorrectly.
+RigorGate is an audit-first equity research engine. The challenge is not to trust its score. The challenge is to find the fictional case, public evidence pattern, or engineering edge case that makes a decision gate behave incorrectly.
 
 A useful break can be a false positive, a false rejection, hidden stale evidence, an unsafe fallback, a look-ahead leak, or a sector assumption that does not generalize.
 
@@ -14,26 +14,26 @@ A useful break can be a false positive, a false rejection, hidden stale evidence
 
 ### Researcher: no code required
 
-1. Try all three cases in [Replay Lab](https://galionkh.github.io/galion-signal-forge/).
+1. Try all three cases in [Replay Lab](https://galionkh.github.io/rigorgate/).
 2. Look for a posture, gate, or missing-evidence rule you disagree with.
-3. [Open the challenge form](https://github.com/Galionkh/galion-signal-forge/issues/new?template=counterexample.yml).
+3. [Open the challenge form](https://github.com/Galionkh/rigorgate/issues/new?template=counterexample.yml).
 4. State what was observable at decision time, what the engine should do, and the strongest argument against your view.
 
 A maintainer or developer can later convert a strong research case into a deterministic fixture. The issue itself is a valid contribution.
 
 ### First PR
 
-Pick an open [`good first issue`](https://github.com/Galionkh/galion-signal-forge/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22). Leave a short comment before starting, keep the change scoped to the acceptance criteria, and run:
+Pick an open [`good first issue`](https://github.com/Galionkh/rigorgate/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22). Leave a short comment before starting, keep the change scoped to the acceptance criteria, and run:
 
 ```bash
 make verify
 ```
 
-The zero-install route is [GitHub Codespaces](https://codespaces.new/Galionkh/galion-signal-forge?quickstart=1).
+The zero-install route is [GitHub Codespaces](https://codespaces.new/Galionkh/rigorgate?quickstart=1).
 
 ### Core engineering
 
-Browse the [`help wanted`](https://github.com/Galionkh/galion-signal-forge/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) queue. The highest-value work protects observation time, source provenance, missing evidence, provider failure behavior, and reproducible validation.
+Browse the [`help wanted`](https://github.com/Galionkh/rigorgate/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) queue. The highest-value work protects observation time, source provenance, missing evidence, provider failure behavior, and reproducible validation.
 
 Open an issue before changing a core contract or data model.
 

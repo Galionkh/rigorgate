@@ -89,7 +89,7 @@ def failure_report(exc: Exception) -> dict[str, Any]:
 
 def render_markdown(report: dict[str, Any]) -> str:
     lines = [
-        "# GALION SignalForge — Premarket Event Monitor",
+        "# RigorGate — Premarket Event Monitor",
         "",
         f"- **Run status:** `{report['run_status']}`",
         f"- **Source posture:** `{report['source_posture']}`",
@@ -125,7 +125,7 @@ def write_report(report: dict[str, Any], output_dir: Path) -> None:
 def main(argv: list[str] | None = None) -> int:
     import argparse
 
-    parser = argparse.ArgumentParser(description="Run GALION premarket material-event discovery")
+    parser = argparse.ArgumentParser(description="Run RigorGate premarket material-event discovery")
     parser.add_argument("--output-dir", default="reports/events")
     parser.add_argument("--hours", type=int, default=36)
     args = parser.parse_args(argv)

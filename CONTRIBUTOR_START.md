@@ -1,12 +1,12 @@
-# Your first SignalForge contribution
+# Your first RigorGate contribution
 
-The fastest way to understand SignalForge is to try to break a decision gate.
+The fastest way to understand RigorGate is to try to break a decision gate.
 
-No code is required for the researcher path. See [Can you break SignalForge?](CHALLENGE.md) to choose between a research case, a first pull request, and a core engineering task.
+No code is required for the researcher path. See [Can you break RigorGate?](CHALLENGE.md) to choose between a research case, a first pull request, and a core engineering task.
 
 ## Zero-install path
 
-1. Open the repository in [GitHub Codespaces](https://codespaces.new/Galionkh/galion-signal-forge?quickstart=1).
+1. Open the repository in [GitHub Codespaces](https://codespaces.new/Galionkh/rigorgate?quickstart=1).
 2. Wait for `make verify` to finish.
 3. The Replay Lab opens automatically on port 8080.
 4. Choose a case, make a blind decision, and inspect the revealed audit trail.
@@ -16,8 +16,8 @@ No credentials, market-data subscription, or brokerage account are needed. Every
 ## Local path
 
 ```bash
-git clone https://github.com/Galionkh/galion-signal-forge.git
-cd galion-signal-forge
+git clone https://github.com/Galionkh/rigorgate.git
+cd rigorgate
 python -m pip install -e .
 make lab
 ```
@@ -28,21 +28,21 @@ Open `http://localhost:8080`.
 
 Want a concrete task instead of starting from a blank issue? Pick one of these open quests:
 
-- **Break a gate — 30–60 min:** [Add a tempting replay case that must fail closed](https://github.com/Galionkh/galion-signal-forge/issues/1)
-- **Improve the lab UX — newcomer friendly:** [Add keyboard shortcuts and visible focus states](https://github.com/Galionkh/galion-signal-forge/issues/2)
-- **Test evidence freshness — newcomer friendly:** [Add a stale-evidence edge case](https://github.com/Galionkh/galion-signal-forge/issues/3)
-- **Forge a provider — deeper engineering:** [Add deterministic provider contract fixtures](https://github.com/Galionkh/galion-signal-forge/issues/5)
-- **Red-team a sector — research challenge:** [Add a sector-specific accounting trap](https://github.com/Galionkh/galion-signal-forge/issues/9)
+- **Break a gate — 30–60 min:** [Add a tempting replay case that must fail closed](https://github.com/Galionkh/rigorgate/issues/1)
+- **Improve the lab UX — newcomer friendly:** [Add keyboard shortcuts and visible focus states](https://github.com/Galionkh/rigorgate/issues/2)
+- **Test evidence freshness — newcomer friendly:** [Add a stale-evidence edge case](https://github.com/Galionkh/rigorgate/issues/3)
+- **Forge a provider — deeper engineering:** [Add deterministic provider contract fixtures](https://github.com/Galionkh/rigorgate/issues/5)
+- **Red-team a sector — research challenge:** [Add a sector-specific accounting trap](https://github.com/Galionkh/rigorgate/issues/9)
 
-If one is already claimed, browse all [open issues](https://github.com/Galionkh/galion-signal-forge/issues) and leave a short comment before you start.
+If one is already claimed, browse all [open issues](https://github.com/Galionkh/rigorgate/issues) and leave a short comment before you start.
 
-Not ready to code? [Submit a no-code counterexample](https://github.com/Galionkh/galion-signal-forge/issues/new?template=counterexample.yml) with the evidence that was observable at decision time. A maintainer or developer can convert a strong case into a fixture later.
+Not ready to code? [Submit a no-code counterexample](https://github.com/Galionkh/rigorgate/issues/new?template=counterexample.yml) with the evidence that was observable at decision time. A maintainer or developer can convert a strong case into a fixture later.
 
 ## The counterexample challenge
 
 A useful first pull request adds a case where a tempting signal must fail closed:
 
-1. Add or modify a fictional case in `galion/replay_lab.py`.
+1. Add or modify a fictional case in `rigorgate/replay_lab.py`.
 2. Give it at least one explicit failed gate.
 3. State the missing evidence and the strongest red-team objection.
 4. Keep `not_a_buy_recommendation` true and `order_created` false.
@@ -59,4 +59,4 @@ The generated `lab/data/replay.json` is committed. `make verify` rebuilds it and
 - It makes uncertainty visible instead of replacing missing evidence with a score.
 - It does not add order execution or imply guaranteed performance.
 
-Start with the [good first issues](https://github.com/Galionkh/galion-signal-forge/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) or propose a compact counterexample of your own.
+Start with the [good first issues](https://github.com/Galionkh/rigorgate/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) or propose a compact counterexample of your own.

@@ -36,7 +36,7 @@ def get_json(
         url,
         headers={
             "Accept": "application/json",
-            "User-Agent": "GALION-Alpha-Scanner/0.1",
+            "User-Agent": "RigorGate-Alpha-Scanner/0.2",
             **dict(headers or {}),
         },
     )
@@ -60,4 +60,3 @@ def get_json(
         if attempt + 1 < cfg.attempts:
             time.sleep(cfg.backoff_seconds * (2**attempt))
     raise ProviderError(f"Request failed for {base_url}: {last_error}")
-

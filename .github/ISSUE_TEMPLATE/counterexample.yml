@@ -1,4 +1,4 @@
-name: Challenge a SignalForge decision
+name: Challenge a RigorGate decision
 description: Submit a no-code or code-backed case that could expose a false positive or false rejection.
 title: "[Challenge]: "
 labels: ["enhancement", "help wanted"]
