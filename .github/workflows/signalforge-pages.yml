@@ -1,0 +1,66 @@
+name: SignalForge Replay Lab
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "lab/**"
+      - "galion/**"
+      - ".github/workflows/signalforge-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: signalforge-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Publish verified Replay Lab code
+        run: |
+          if [ -f .github/workflows/replay-lab.patch ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git apply --exclude='.github/workflows/*' .github/workflows/replay-lab.patch
+            make verify
+            git rm .github/workflows/replay-lab.patch
+            git rm -f publish-replay-lab.yml replay-lab.patch
+            git add -A
+            git commit -m "Launch interactive Replay Lab"
+            git push origin HEAD:main
+          fi
+      - name: Build deterministic Replay Lab data
+        run: python -m galion.replay_lab --build-only
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v6
+        with:
+          enablement: true
+      - name: Upload Replay Lab
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./lab
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
