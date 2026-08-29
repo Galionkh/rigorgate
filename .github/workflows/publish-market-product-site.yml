@@ -1,0 +1,87 @@
+name: Publish RigorGate market product site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/publish-market-product-site.yml"
+      - ".github/workflows/market-product-site.patch"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: rigorgate-market-product-site
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Apply the reviewed product-site patch
+        run: |
+          git apply --check .github/workflows/market-product-site.patch
+          git apply .github/workflows/market-product-site.patch
+
+      - name: Verify the complete project
+        run: make verify
+
+      - name: Publish the tested product files to main
+        run: |
+          git config user.name "rigorgate-publisher[bot]"
+          git config user.email "rigorgate-publisher[bot]@users.noreply.github.com"
+          git add README.md assets/banner.svg lab/app.js lab/index.html lab/styles.css tests/test_replay_lab.py
+          git commit -m "Reframe site around equity discovery workflow"
+          git push origin HEAD:main
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v6
+        with:
+          enablement: true
+
+      - name: Upload verified site
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./lab
+
+  deploy:
+    needs: publish
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
+
+  cleanup:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out published main
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Remove one-time publishing files
+        run: |
+          git config user.name "rigorgate-publisher[bot]"
+          git config user.email "rigorgate-publisher[bot]@users.noreply.github.com"
+          git rm .github/workflows/publish-market-product-site.yml
+          git rm .github/workflows/market-product-site.patch
+          git commit -m "Remove one-time product-site publisher"
+          git push origin HEAD:main
