@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="RigorGate" width="100%">
+  <img src="assets/social-preview.png" alt="RigorGate — From market universe to research queue" width="100%">
 </p>
 
 <p align="center">

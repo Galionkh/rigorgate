@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">RigorGate logo</title>
+  <desc id="desc">A geometric evidence gate in green and cyan on a dark market-terminal background</desc>
+  <defs>
+    <linearGradient id="logo-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d2233"/>
+      <stop offset="1" stop-color="#06101b"/>
+    </linearGradient>
+    <linearGradient id="logo-accent" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#36d399"/>
+      <stop offset="1" stop-color="#5ee7ff"/>
+    </linearGradient>
+    <filter id="logo-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#logo-bg)"/>
+  <path d="M256 72 404 157v198L256 440 108 355V157Z" fill="none" stroke="#244553" stroke-width="7"/>
+  <path d="M217 151 165 184v144l52 33" fill="none" stroke="url(#logo-accent)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" filter="url(#logo-glow)"/>
+  <path d="m295 151 52 33v144l-52 33" fill="none" stroke="url(#logo-accent)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" filter="url(#logo-glow)"/>
+  <path d="M256 163v186" stroke="#9fefff" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+  <circle cx="256" cy="203" r="10" fill="#36d399"/>
+  <circle cx="256" cy="256" r="10" fill="#f3c969"/>
+  <circle cx="256" cy="309" r="10" fill="#5ee7ff"/>
+  <path d="M198 256h116" stroke="#5ee7ff" stroke-width="4" stroke-dasharray="7 13" opacity=".36"/>
+</svg>

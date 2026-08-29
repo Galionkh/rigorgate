@@ -73,6 +73,15 @@ class ReplayLabTests(unittest.TestCase):
         self.assertIn("function renderResearchQueue(cases)", script)
         self.assertIn("renderResearchQueue(state.data.cases)", script)
 
+    def test_lab_has_project_owned_social_preview_metadata(self) -> None:
+        root = Path(__file__).resolve().parents[1]
+        html = (root / "lab" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('property="og:image"', html)
+        self.assertIn("https://galionkh.github.io/rigorgate/assets/social-preview.png", html)
+        self.assertIn('name="twitter:card" content="summary_large_image"', html)
+        self.assertTrue((root / "lab" / "assets" / "social-preview.png").is_file())
+        self.assertTrue((root / "lab" / "assets" / "rigorgate-logo.png").is_file())
+
 
 if __name__ == "__main__":
     unittest.main()

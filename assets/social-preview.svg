@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">RigorGate — Audit-first equity discovery</title>
+  <desc id="desc">RigorGate turns a broad market universe into a small, auditable research queue</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07131f"/>
+      <stop offset=".58" stop-color="#091a28"/>
+      <stop offset="1" stop-color="#0c2b34"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#36d399"/>
+      <stop offset="1" stop-color="#5ee7ff"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#102838"/>
+      <stop offset="1" stop-color="#081722"/>
+    </linearGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#8bd7e5" stroke-opacity=".055"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="640" rx="24" fill="url(#bg)"/>
+  <rect width="1280" height="640" rx="24" fill="url(#grid)"/>
+  <circle cx="1110" cy="55" r="280" fill="#1e8392" opacity=".07"/>
+
+  <g transform="translate(70 63)">
+    <g transform="translate(0 0)">
+      <path d="M36 0 68 18v38L36 74 4 56V18Z" fill="#091722" stroke="#284d59" stroke-width="2"/>
+      <path d="m28 18-12 8v22l12 8M44 18l12 8v22l-12 8" fill="none" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
+      <path d="M36 21v32" stroke="#8defff" stroke-width="2"/>
+      <circle cx="36" cy="29" r="2.8" fill="#36d399"/><circle cx="36" cy="37" r="2.8" fill="#f3c969"/><circle cx="36" cy="45" r="2.8" fill="#5ee7ff"/>
+    </g>
+    <text x="90" y="47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="35" font-weight="800" letter-spacing="1" fill="#edfaff">Rigor<tspan font-weight="300" fill="#5ee7ff">Gate</tspan></text>
+    <text x="0" y="128" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700" letter-spacing="2.5" fill="#5ee7ff">OPEN-SOURCE EQUITY DISCOVERY ENGINE</text>
+    <text x="0" y="197" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="54" font-weight="800" letter-spacing="-2.2" fill="#eefcff">From market universe</text>
+    <text x="0" y="258" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="54" font-weight="800" letter-spacing="-2.2" fill="#eefcff">to research queue.</text>
+    <text x="0" y="308" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" fill="#9ab8bf">Evidence-aware discovery for liquid U.S.-listed equities.</text>
+    <g transform="translate(0 374)" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" font-weight="700" letter-spacing="1">
+      <rect width="146" height="42" rx="8" fill="#36d399" fill-opacity=".09" stroke="#36d399" stroke-opacity=".28"/>
+      <circle cx="20" cy="21" r="4" fill="#36d399"/><text x="34" y="25" fill="#bcebd9">HARD GATES</text>
+      <rect x="160" width="178" height="42" rx="8" fill="#5ee7ff" fill-opacity=".07" stroke="#5ee7ff" stroke-opacity=".24"/>
+      <circle cx="180" cy="21" r="4" fill="#5ee7ff"/><text x="194" y="25" fill="#c1e8ee">EVIDENCE TRAIL</text>
+      <rect x="352" width="124" height="42" rx="8" fill="#f3c969" fill-opacity=".06" stroke="#f3c969" stroke-opacity=".24"/>
+      <circle cx="372" cy="21" r="4" fill="#f3c969"/><text x="386" y="25" fill="#eadbac">NO ORDERS</text>
+    </g>
+  </g>
+
+  <g transform="translate(760 92)">
+    <rect x="8" y="18" width="434" height="442" rx="22" fill="#000" opacity=".22"/>
+    <rect width="450" height="460" rx="22" fill="url(#panel)" stroke="#5ee7ff" stroke-opacity=".2"/>
+    <path d="M0 58h450" stroke="#b4ecf5" stroke-opacity=".12"/>
+    <circle cx="25" cy="29" r="5" fill="#ff6b7a"/><circle cx="43" cy="29" r="5" fill="#f3c969"/><circle cx="61" cy="29" r="5" fill="#36d399"/>
+    <text x="82" y="34" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#89a9b0">demo://market-funnel</text>
+    <text x="354" y="34" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700" fill="#36d399">PUBLIC DEMO</text>
+    <text x="28" y="101" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="14" fill="#d8eef2"><tspan fill="#36d399">$</tspan> rigorgate scan --mode demo</text>
+
+    <g transform="translate(28 145)" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">
+      <text y="8" fill="#88a8b0">Market universe</text><rect x="145" width="238" height="8" rx="4" fill="#ffffff" fill-opacity=".06"/><rect x="145" width="238" height="8" rx="4" fill="url(#accent)"/><text x="398" y="8" fill="#edfaff">240</text>
+      <text y="61" fill="#88a8b0">Liquidity + history</text><rect x="145" y="53" width="238" height="8" rx="4" fill="#ffffff" fill-opacity=".06"/><rect x="145" y="53" width="78" height="8" rx="4" fill="url(#accent)"/><text x="398" y="61" fill="#edfaff">61</text>
+      <text y="114" fill="#88a8b0">Technical discovery</text><rect x="145" y="106" width="238" height="8" rx="4" fill="#ffffff" fill-opacity=".06"/><rect x="145" y="106" width="30" height="8" rx="4" fill="url(#accent)"/><text x="398" y="114" fill="#edfaff">12</text>
+      <text y="167" fill="#88a8b0">Evidence queue</text><rect x="145" y="159" width="238" height="8" rx="4" fill="#ffffff" fill-opacity=".06"/><rect x="145" y="159" width="14" height="8" rx="4" fill="url(#accent)"/><text x="398" y="167" fill="#edfaff">3</text>
+    </g>
+
+    <rect x="28" y="353" width="394" height="63" fill="#36d399" fill-opacity=".055" stroke="#36d399" stroke-opacity=".2"/>
+    <text x="47" y="390" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#8eabb2">RESEARCH QUEUE</text>
+    <text x="321" y="390" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="800" fill="#36d399">3 CASES</text>
+  </g>
+</svg>
