@@ -37,6 +37,64 @@ function renderFunnel(rows) {
   });
 }
 
+function renderResearchQueue(cases) {
+  const host = byId("research-queue-body");
+  host.replaceChildren();
+  const postureLabels = {
+    research: "RESEARCH CANDIDATE",
+    wait: "WAIT FOR PROOF",
+    reject: "REJECTED",
+  };
+
+  cases.forEach((candidate, index) => {
+    const row = makeElement("article", "queue-row");
+
+    const symbol = makeElement("div", "queue-symbol");
+    symbol.append(
+      makeElement("strong", "", candidate.symbol),
+      makeElement("span", "", candidate.title),
+    );
+
+    const posture = makeElement(
+      "span",
+      `queue-posture ${candidate.correct_action}`,
+      postureLabels[candidate.correct_action],
+    );
+
+    const evidence = makeElement("div", "queue-cell");
+    evidence.append(
+      makeElement("span", "queue-score", `${candidate.passport.evidence_quality} / 100`),
+      makeElement("small", "", "evidence quality"),
+    );
+
+    const technical = makeElement("div", "queue-score", `${Number(candidate.technical_score).toFixed(1)} / 100`);
+    const technicalTrack = document.createElement("i");
+    const technicalBar = document.createElement("b");
+    technicalBar.style.width = `${candidate.technical_score}%`;
+    technicalTrack.append(technicalBar);
+    technical.append(technicalTrack);
+
+    const next = makeElement("div", "queue-next");
+    const nextLabel = candidate.correct_action === "research"
+      ? "Begin full underwriting"
+      : candidate.correct_action === "wait"
+        ? `Need: ${candidate.missing_evidence[0]}`
+        : `Failed: ${candidate.gates.find((gate) => gate.state === "fail")?.name || "hard gate"}`;
+    next.append(makeElement("span", "", nextLabel));
+    const inspect = makeElement("button", "queue-open", "Inspect case ↘");
+    inspect.type = "button";
+    inspect.addEventListener("click", () => {
+      state.activeIndex = index;
+      renderActiveCase();
+      byId("challenge").scrollIntoView({ behavior: "smooth" });
+    });
+    next.append(inspect);
+
+    row.append(symbol, posture, evidence, technical, next);
+    host.append(row);
+  });
+}
+
 function chartGeometry(values) {
   const width = 760;
   const height = 290;
@@ -254,6 +312,7 @@ async function boot() {
     if (!response.ok) throw new Error(`Replay data returned ${response.status}`);
     state.data = await response.json();
     renderFunnel(state.data.universe_funnel);
+    renderResearchQueue(state.data.cases);
     renderQuests(state.data.contributor_quests);
     renderActiveCase();
   } catch (error) {

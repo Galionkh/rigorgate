@@ -3,22 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="RigorGate Replay Lab — challenge an audit-first equity research engine with fictional market cases.">
+  <meta name="description" content="RigorGate is an audit-first equity discovery engine that turns a broad market universe into a small, evidence-backed research queue.">
   <meta name="theme-color" content="#07111f">
-  <title>RigorGate Replay Lab</title>
+  <title>RigorGate — Audit-first equity discovery</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="RigorGate Replay Lab home">
+    <a class="brand" href="#top" aria-label="RigorGate home">
       <span class="brand-mark" aria-hidden="true"><span></span></span>
       <span><strong>Rigor</strong>Gate</span>
     </a>
     <nav aria-label="Primary navigation">
-      <a href="#challenge">Replay</a>
+      <a href="#engine">Engine</a>
+      <a href="#queue">Research queue</a>
+      <a href="#challenge">Replay Lab</a>
       <a href="#evidence">Evidence</a>
-      <a href="#contribute">Contribute</a>
       <a class="nav-github" href="https://github.com/Galionkh/rigorgate">GitHub ↗</a>
     </nav>
   </header>
@@ -26,51 +27,138 @@
   <main id="top">
     <section class="hero">
       <div class="hero-copy">
-        <div class="eyebrow"><span class="pulse"></span> ZERO-CREDENTIAL REPLAY LAB</div>
-        <h1>Don’t trust the score.<br><span>Interrogate the decision.</span></h1>
-        <p class="hero-lede">Three fictional stocks. Hidden outcomes. You decide whether to research, wait, or reject—then RigorGate opens the audit trail and shows every weak link.</p>
+        <div class="eyebrow"><span class="pulse"></span> OPEN-SOURCE EQUITY DISCOVERY ENGINE</div>
+        <h1>Find what deserves<br><span>deeper research.</span></h1>
+        <p class="hero-lede">RigorGate narrows a broad U.S. equity universe into a small, auditable research queue. It combines market regime, price structure, business quality, valuation, catalysts, evidence freshness, and explicit risk gates.</p>
         <div class="hero-actions">
-          <a class="button primary" href="#challenge">Enter the decision room <span>↓</span></a>
-          <a class="button secondary" href="https://codespaces.new/Galionkh/rigorgate?quickstart=1">Open in Codespaces ↗</a>
+          <a class="button primary" href="#engine">See how it works <span>↓</span></a>
+          <a class="button secondary" href="#challenge">Try the Replay Lab</a>
         </div>
-        <div class="hero-proof" aria-label="Replay Lab characteristics">
-          <div><strong>3</strong><span>hidden cases</span></div>
-          <div><strong>0</strong><span>API keys</span></div>
-          <div><strong>100%</strong><span>deterministic</span></div>
-          <div><strong>0</strong><span>orders</span></div>
+        <div class="hero-proof" aria-label="RigorGate research boundaries">
+          <div><strong>7</strong><span>research layers</span></div>
+          <div><strong>6</strong><span>hard gate classes</span></div>
+          <div><strong>1</strong><span>evidence trail</span></div>
+          <div><strong>0</strong><span>orders created</span></div>
         </div>
       </div>
 
       <aside class="terminal-card" aria-label="RigorGate discovery funnel preview">
         <div class="terminal-top">
           <span class="terminal-lights"><i></i><i></i><i></i></span>
-          <span>replay://decision-funnel</span>
-          <span class="terminal-status">LIVE</span>
+          <span>demo://market-funnel</span>
+          <span class="terminal-status">PUBLIC DEMO</span>
         </div>
         <div class="terminal-body">
-          <p><span class="prompt">$</span> rigorgate replay --blind</p>
+          <p><span class="prompt">$</span> rigorgate scan --mode demo</p>
           <div id="hero-funnel" class="hero-funnel" aria-live="polite"></div>
           <div class="terminal-result">
             <span>RESEARCH QUEUE</span>
-            <strong>3 CASES LOCKED</strong>
+            <strong>3 CASES</strong>
           </div>
-          <p class="terminal-cursor"><span class="prompt">›</span> Your judgment is the first model<span class="cursor"></span></p>
+          <p class="terminal-cursor"><span class="prompt">›</span> Evidence before conviction<span class="cursor"></span></p>
         </div>
       </aside>
     </section>
 
     <section class="manifesto" aria-label="RigorGate principle">
-      <p>Most screeners show what passed.</p>
-      <h2>RigorGate is built to expose <em>why something should fail.</em></h2>
+      <p>A ranking tells you where to look. An audit trail tells you why.</p>
+      <h2>From thousands of stocks to a <em>small, inspectable research queue.</em></h2>
+    </section>
+
+    <section id="engine" class="engine-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-index">01 / DISCOVERY ENGINE</span>
+          <h2>How a stock reaches<br>the research queue.</h2>
+        </div>
+        <p>Each layer can narrow, pause, or reject a candidate. Missing critical evidence fails closed instead of being converted into false confidence.</p>
+      </div>
+
+      <div class="engine-map" aria-label="RigorGate equity discovery pipeline">
+        <article class="engine-step engine-source">
+          <span class="step-number">01</span>
+          <span class="step-tag">UNIVERSE</span>
+          <h3>Market coverage</h3>
+          <p>U.S.-listed common stocks enter with exchange, security type, price history, and liquidity context.</p>
+          <small>START BROAD</small>
+        </article>
+        <article class="engine-step">
+          <span class="step-number">02</span>
+          <span class="step-tag">CONTEXT</span>
+          <h3>Regime + tradability</h3>
+          <p>Market breadth, volatility, liquidity, and history gates remove structures the engine cannot underwrite.</p>
+          <small>FAIL CLOSED</small>
+        </article>
+        <article class="engine-step">
+          <span class="step-number">03</span>
+          <span class="step-tag">DISCOVERY</span>
+          <h3>Price structure</h3>
+          <p>Trend stage, momentum, relative strength, volume, and volatility surface technically relevant setups.</p>
+          <small>RANK, DO NOT PREDICT</small>
+        </article>
+        <article class="engine-step">
+          <span class="step-number">04</span>
+          <span class="step-tag">UNDERWRITE</span>
+          <h3>Business + valuation</h3>
+          <p>Financial durability, accounting quality, valuation context, catalysts, and sector-aware checks test the thesis.</p>
+          <small>LOOK FOR CONTRADICTIONS</small>
+        </article>
+        <article class="engine-step engine-output">
+          <span class="step-number">05</span>
+          <span class="step-tag">OUTPUT</span>
+          <h3>Research queue</h3>
+          <p>A posture, hard-gate results, missing evidence, invalidation reference, and red-team case travel together.</p>
+          <small>HUMAN DECISION NEXT</small>
+        </article>
+      </div>
+
+      <div class="research-layers">
+        <div><span>MARKET</span><strong>Regime, breadth, volatility</strong></div>
+        <div><span>TECHNICAL</span><strong>Stage, momentum, relative strength</strong></div>
+        <div><span>BUSINESS</span><strong>Growth, margins, cash conversion</strong></div>
+        <div><span>ACCOUNTING</span><strong>Quality, dilution, balance-sheet risk</strong></div>
+        <div><span>VALUATION</span><strong>Context, expectations, downside</strong></div>
+        <div><span>CATALYST</span><strong>Why now, what can change</strong></div>
+        <div><span>EVIDENCE</span><strong>Source, freshness, missing data</strong></div>
+      </div>
+    </section>
+
+    <section id="queue" class="queue-section">
+      <div class="section-heading compact">
+        <div>
+          <span class="section-index">02 / RESEARCH OUTPUT</span>
+          <h2>Not a buy list.<br>A queue for underwriting.</h2>
+        </div>
+        <p>The public demo shows the shape of the output using deterministic fictional securities. A live run uses configured market and filing providers.</p>
+      </div>
+
+      <div class="queue-shell">
+        <div class="queue-toolbar">
+          <div><span class="status-dot"></span><strong>DETERMINISTIC PUBLIC DEMO</strong></div>
+          <span>FICTIONAL SECURITIES · NO LIVE PRICES · NO ORDERS</span>
+        </div>
+        <div class="queue-head" aria-hidden="true">
+          <span>SYMBOL / SETUP</span><span>POSTURE</span><span>EVIDENCE</span><span>TECHNICAL</span><span>NEXT STEP</span>
+        </div>
+        <div id="research-queue-body" class="research-queue-body" aria-live="polite">
+          <div class="queue-loading">Loading research queue…</div>
+        </div>
+      </div>
+
+      <div class="posture-key" aria-label="RigorGate output postures">
+        <article><i class="posture-research"></i><div><strong>Research candidate</strong><p>Strong enough to begin full human underwriting. It is not an order.</p></div></article>
+        <article><i class="posture-wait"></i><div><strong>Wait for proof</strong><p>A named confirmation or missing evidence blocks advancement.</p></div></article>
+        <article><i class="posture-reject"></i><div><strong>Rejected</strong><p>A hard gate failed and the reason remains visible in the record.</p></div></article>
+      </div>
     </section>
 
     <section id="challenge" class="challenge-section">
       <div class="section-heading">
         <div>
-          <span class="section-index">01 / DECISION ROOM</span>
-          <h2>Can you beat the gate?</h2>
+          <span class="section-index">03 / INTERACTIVE REPLAY</span>
+          <h2>Step inside the<br>decision engine.</h2>
         </div>
-        <p>Inspect the structure without seeing the engine’s conclusion. Make the call, then reveal the audit trail.</p>
+        <p>Use three fictional cases to experience the final decision layer. Commit before seeing the posture, then inspect what advanced or failed.</p>
       </div>
 
       <div class="case-tabs" id="case-tabs" role="tablist" aria-label="Replay cases"></div>
@@ -159,7 +247,7 @@
     <section id="evidence" class="evidence-section">
       <div class="section-heading compact">
         <div>
-          <span class="section-index">02 / EVIDENCE PASSPORT</span>
+          <span class="section-index">04 / EVIDENCE PASSPORT</span>
           <h2>A decision you can diff.</h2>
         </div>
         <p>Every case carries posture, missing evidence, gates, invalidation, and a machine-readable observation ID.</p>
@@ -184,7 +272,7 @@
 
     <section id="contribute" class="contribute-section">
       <div class="contribute-intro">
-        <span class="section-index">03 / THE FORGE</span>
+        <span class="section-index">05 / OPEN-SOURCE CHALLENGE</span>
         <h2>Don’t just star it.<br><span>Try to break it.</span></h2>
         <p>Choose the smallest path that fits you. A researcher can submit a decision-time counterexample without code, a first-time contributor can ship a bounded fix, and an experienced developer can harden the evidence layer.</p>
         <div class="command-card">

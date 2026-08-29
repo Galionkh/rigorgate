@@ -9,14 +9,14 @@
   <img src="https://img.shields.io/badge/status-research--grade-f6c85f" alt="Research-grade">
 </p>
 
-<p align="center"><strong>Audit-first equity research. Built to be challenged.</strong></p>
+<p align="center"><strong>From a broad U.S. equity universe to a small, auditable research queue.</strong></p>
 
-<p align="center"><em>Don't trust the score. Break the gate.</em></p>
+<p align="center"><em>Find what deserves deeper research. Keep every reason visible.</em></p>
 
 <p align="center">
-  <a href="https://galionkh.github.io/rigorgate/"><strong>Try the 60-second Replay Lab</strong></a>
+  <a href="https://galionkh.github.io/rigorgate/"><strong>See how RigorGate works</strong></a>
   &nbsp;·&nbsp;
-  <a href="https://github.com/Galionkh/rigorgate/issues/new?template=counterexample.yml"><strong>Break a gate</strong></a>
+  <a href="https://galionkh.github.io/rigorgate/#challenge"><strong>Try the Replay Lab</strong></a>
   &nbsp;·&nbsp;
   <a href="CONTRIBUTOR_START.md"><strong>Start contributing</strong></a>
 </p>
@@ -27,7 +27,7 @@ It helps researchers decide what deserves deeper underwriting. It does not place
 
 | If you are a… | Start here | What you can do |
 |---|---|---|
-| Curious visitor | [Replay Lab](https://galionkh.github.io/rigorgate/) | Make three blind decisions, then reveal the gates and Evidence Passport |
+| Curious visitor | [Product walkthrough](https://galionkh.github.io/rigorgate/) | Follow the journey from market universe to auditable research queue |
 | Researcher or investor | [Counterexample challenge](CHALLENGE.md) | Submit a decision-time case without writing code |
 | Python, data, or quant developer | [Contributor start](CONTRIBUTOR_START.md) | Pick a bounded issue, open Codespaces, and ship a tested fix |
 
@@ -40,7 +40,7 @@ It helps researchers decide what deserves deeper underwriting. It does not place
 - **Modular providers:** prices, filings, macro data, and estimates remain replaceable.
 - **Research posture:** outputs are `WATCHLIST`, `WAIT FOR PROOF`, or `RESEARCH CANDIDATE`—never automatic orders.
 
-## Can you break the gate?
+## Experience the final gate
 
 Open the [Replay Lab](https://galionkh.github.io/rigorgate/) before reading the source. You get three fictional market setups and must choose **Research**, **Wait**, or **Reject** while the audit trail is locked. RigorGate then reveals the hard gates, missing evidence, red-team case, and a downloadable Evidence Passport.
 

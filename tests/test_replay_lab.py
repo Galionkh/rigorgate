@@ -62,6 +62,17 @@ class ReplayLabTests(unittest.TestCase):
         self.assertIn('challengeUrl.searchParams.set("template", "counterexample.yml")', script)
         self.assertIn('challengeUrl.searchParams.set("title", challengeTitle)', script)
 
+    def test_lab_explains_the_product_before_the_replay_challenge(self) -> None:
+        root = Path(__file__).resolve().parents[1]
+        html = (root / "lab" / "index.html").read_text(encoding="utf-8")
+        script = (root / "lab" / "app.js").read_text(encoding="utf-8")
+        self.assertIn("From thousands of stocks", html)
+        self.assertIn('id="engine"', html)
+        self.assertIn('id="research-queue-body"', html)
+        self.assertLess(html.index('id="engine"'), html.index('id="challenge"'))
+        self.assertIn("function renderResearchQueue(cases)", script)
+        self.assertIn("renderResearchQueue(state.data.cases)", script)
+
 
 if __name__ == "__main__":
     unittest.main()
